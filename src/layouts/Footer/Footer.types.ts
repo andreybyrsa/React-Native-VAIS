@@ -4,8 +4,10 @@ import { ViewStyle } from 'react-native'
 interface FooterProps {
   style?: ViewStyle
 
-  isNavigation?: boolean
   children?: React.ReactNode
+  iconButton?: React.ReactNode
+
+  isNavigation?: boolean
 }
 
 export default FooterProps

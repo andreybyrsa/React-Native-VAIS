@@ -22,12 +22,27 @@ export default function App() {
         />
       }
       footer={
-        <Footer><Button>123</Button></Footer>
+        <Footer
+          iconButton={
+            <View
+              style={{
+                minHeight: 50,
+                maxHeight: 50,
+                maxWidth: 50,
+                minWidth: 50,
+                backgroundColor: '#198783',
+                height: 50,
+                width: 50,
+              }}
+            />
+          }
+        >
+          <Button>123</Button>
+        </Footer>
       }
     >
-      <Button type='secondary'>321</Button>
-      <Button type='secondary'>321</Button>
-
+      <Button type="secondary">321</Button>
+      <Button type="secondary">321</Button>
     </PageLayout>
   )
 }
