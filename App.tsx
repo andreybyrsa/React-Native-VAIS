@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native'
 export default function App() {
   return (
     <View style={style.container}>
-      <Button type="secondary" />
+      <Button type="secondary">Продолжить</Button>
     </View>
   )
 }
