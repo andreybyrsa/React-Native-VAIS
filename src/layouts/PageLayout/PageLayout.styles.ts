@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-
+import getCurrentColor from '../../utils/getCurrentColor'
+import { StyleSheet } from 'react-native'
 
 const PageLayoutStyles = StyleSheet.create({
   'page-layout': {
@@ -11,7 +11,7 @@ const PageLayoutStyles = StyleSheet.create({
 
     overflow: 'hidden',
 
-    backgroundColor: '#C3CFD7',
+    backgroundColor: getCurrentColor('color-background-primary'),
 
     display: 'flex',
     alignItems: 'stretch',

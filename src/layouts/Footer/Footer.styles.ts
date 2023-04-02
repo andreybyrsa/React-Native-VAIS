@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native';
-
+import getCurrentColor from '../../utils/getCurrentColor'
+import { StyleSheet } from 'react-native'
 
 const FooterStyles = StyleSheet.create({
   footer: {
     width: '100%',
-    backgroundColor: '#C3CFD7',
+    backgroundColor: getCurrentColor('color-background-primary'),
     paddingTop: 16,
     paddingHorizontal: 20,
     paddingBottom: 0,
