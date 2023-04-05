@@ -1,10 +1,10 @@
 import TypographyStyles from './Typography.styles'
 import TypographyProps from './Typography.types'
 import { useFonts } from 'expo-font'
-import { Text, View } from 'react-native'
+import { Text } from 'react-native'
 
 function Typography({ variant = 'text-1', children }: TypographyProps) {
-  const [fontsLoaded] = useFonts({
+  const [] = useFonts({
     'Montserrat-Bold': require('../../assets/fonts/Montserrat-Bold.ttf'),
     'Montserrat-Semibold': require('../../assets/fonts/Montserrat-Semibold.ttf'),
     'Montserrat-Medium': require('../../assets/fonts/Montserrat-Medium.ttf'),
