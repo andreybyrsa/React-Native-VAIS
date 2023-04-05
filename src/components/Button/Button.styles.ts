@@ -1,11 +1,10 @@
+import { fixedHeight } from '../../../assets/styles/mixins/mixins'
 import getCurrentColor from '../../utils/getCurrentColor'
 import { StyleSheet, ViewStyle } from 'react-native'
 
 const DefaultButton: ViewStyle = {
   width: '100%',
-  height: 48,
-  minHeight: 48,
-  maxHeight: 48,
+  ...fixedHeight({ size: 48 }),
   borderRadius: 10,
 }
 
