@@ -14,9 +14,15 @@ function PageLayout({
 }: PageLayoutProps) {
   return (
     <SafeAreaView style={[PageLayoutStyles['page-layout'], style]}>
-      <SafeAreaView style={[PageLayoutStyles['page-layout__header'], headerStyle]}>{header}</SafeAreaView>
-      <ScrollView style={[PageLayoutStyles['page-layout__content'], contentStyle]}>{children}</ScrollView>
-      <SafeAreaView style={[PageLayoutStyles['page-lyaout__footer'], footerStyle]}>{footer}</SafeAreaView>
+      <SafeAreaView style={[PageLayoutStyles['page-layout__header'], headerStyle]}>
+        {header}
+      </SafeAreaView>
+      <ScrollView style={[PageLayoutStyles['page-layout__content'], contentStyle]}>
+        {children}
+      </ScrollView>
+      <SafeAreaView style={[PageLayoutStyles['page-lyaout__footer'], footerStyle]}>
+        {footer}
+      </SafeAreaView>
     </SafeAreaView>
   )
 }

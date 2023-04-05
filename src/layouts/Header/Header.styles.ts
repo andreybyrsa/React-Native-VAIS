@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native';
-
+import getCurrentColor from '../../utils/getCurrentColor'
+import { StyleSheet } from 'react-native'
 
 const HeaderStyles = StyleSheet.create({
   header: {
-    backgroundColor: '#C3CFD7',
+    backgroundColor: getCurrentColor('color-background-primary'),
     width: '100%',
     paddingTop: 0,
     paddingHorizontal: 20,
