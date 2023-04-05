@@ -1,10 +1,9 @@
 import TypographyStyles from './Typography.styles'
 import TypographyProps from './Typography.types'
 import { useFonts } from 'expo-font'
-import { useCallback } from 'react'
 import { Text, View } from 'react-native'
 
-function Typography({ children }: TypographyProps) {
+function Typography({ variant = 'text-1', children }: TypographyProps) {
   const [fontsLoaded] = useFonts({
     'Montserrat-Bold': require('../../assets/fonts/Montserrat-Bold.ttf'),
     'Montserrat-Semibold': require('../../assets/fonts/Montserrat-Semibold.ttf'),
@@ -12,7 +11,7 @@ function Typography({ children }: TypographyProps) {
     'Montserrat-Regular': require('../../assets/fonts/Montserrat-Regular.ttf'),
   })
 
-  return <Text style={{ fontFamily: 'Montserrat-Medium', fontSize: 30 }}>{children}</Text>
+  return <Text style={[TypographyStyles[`${variant}`]]}>{children}</Text>
 }
 
 export default Typography
