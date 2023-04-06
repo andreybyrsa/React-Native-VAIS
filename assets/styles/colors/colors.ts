@@ -58,13 +58,13 @@ const Colors = {
 }
 
 const ColorsKeys = Object.keys(Colors)
-type ColorsObject = typeof Colors
-const CurrentColors: any = {}
-ColorsKeys.forEach((elem: keyof ColorsObject | string) => {
-  CurrentColors[elem] = {
-    color: Colors[elem as keyof ColorsObject],
-  }
-})
+const ColorsValues = Object.values(Colors)
+const pairs: [string, { color: string }][] = []
 
-export { Colors, CurrentColors }
+ColorsKeys.forEach((elem, index) => {
+  pairs.push([elem, { color: ColorsValues[index] }])
+})
+const ColorsStyles = Object.fromEntries(pairs)
+
+export { Colors, ColorsStyles }
 export type ColorsType = keyof typeof Colors
