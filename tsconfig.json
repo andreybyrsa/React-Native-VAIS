@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
-    "lib": ["es6", "dom"]
-  },
+    "lib": ["ES2019", "dom"]
+  }
 }

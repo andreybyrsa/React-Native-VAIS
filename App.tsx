@@ -1,6 +1,5 @@
 import Button from './src/components/Button'
 import { StyleSheet, View } from 'react-native'
-import Typography from './src/components/Typography'
 
 export default function App() {
   return (
