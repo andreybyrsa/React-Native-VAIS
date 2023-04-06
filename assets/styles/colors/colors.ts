@@ -57,5 +57,14 @@ const Colors = {
   'color-background-blue': '#4D76A1',
 }
 
-export default Colors
+const ColorsKeys = Object.keys(Colors)
+type ColorsObject = typeof Colors
+const CurrentColors: any = {}
+ColorsKeys.forEach((elem: keyof ColorsObject | string) => {
+  CurrentColors[elem] = {
+    color: Colors[elem as keyof ColorsObject],
+  }
+})
+
+export { Colors, CurrentColors }
 export type ColorsType = keyof typeof Colors

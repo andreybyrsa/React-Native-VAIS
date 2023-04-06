@@ -1,8 +1,9 @@
-import TypographyVariants, { TypographyVariantsType } from "../assets/styles/typography/typography";
-
+import TypographyVariants, {
+  TypographyVariantsType,
+} from '../../assets/styles/typography/typography'
 
 const getCurrentTypography = (TypographyName: TypographyVariantsType) => {
-   return TypographyVariants[TypographyName]
+  return TypographyVariants[TypographyName]
 }
 
 export default getCurrentTypography
