@@ -24,7 +24,9 @@ function ImageComponent({
   )
 
   if (isWrapped) {
-    return <View style={wrapperStyle}>{image}</View>
+    return (
+      <View style={[ImageComponentStyles['image-component-wrapper'], wrapperStyle]}>{image}</View>
+    )
   }
 
   return image
