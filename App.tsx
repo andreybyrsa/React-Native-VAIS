@@ -1,5 +1,4 @@
 import { onBoardingContent } from './assets/images'
-import Button from './src/components/Button'
 import ImageComponent from './src/components/ImageComponent/ImageComponent'
 import React from 'react'
 import { StyleSheet, View } from 'react-native'

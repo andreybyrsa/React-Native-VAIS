@@ -40,14 +40,15 @@ function Button({
         disabled={disabled}
       >
         <View>
-          <Text
+          <Typography
             style={[
               ButtonStyles[`button__text-${type}`],
               isPressed && ButtonStyles[`button__text-${type}--active`],
             ]}
+            variant="text-2"
           >
-            <Typography variant="text-2">{children}</Typography>
-          </Text>
+            {children}
+          </Typography>
         </View>
       </TouchableHighlight>
     </View>
