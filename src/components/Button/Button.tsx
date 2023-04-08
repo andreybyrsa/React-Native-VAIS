@@ -2,7 +2,8 @@ import Typography from '../Typography'
 import ButtonStyles from './Button.styles'
 import ButtonProps from './Button.types'
 import { useState } from 'react'
-import { Text, TouchableHighlight, View } from 'react-native'
+import React from 'react'
+import { TouchableHighlight, View } from 'react-native'
 
 function Button({
   style,
