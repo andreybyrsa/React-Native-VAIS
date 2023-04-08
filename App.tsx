@@ -1,4 +1,6 @@
-import Button from './src/components/Button'
+import { onBoardingContent } from './assets/images'
+import ImageComponent from './src/components/ImageComponent/ImageComponent'
+import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import Typography from './src/components/Typography'
 import Cell from './src/components/Cell'
