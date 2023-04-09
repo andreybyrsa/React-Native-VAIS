@@ -13,8 +13,8 @@ const CellStyle = StyleSheet.create({
       width: "100%",
       borderBottomWidth: 1,
       borderTopWidth: 1,
-      paddingHorizontal: '8px',
-      paddingVertical: '5px',
+      paddingHorizontal: 8,
+      paddingVertical: 5,
       ...fixedHeight({ size: 60 }),
    },
    'cell--secondary': {
@@ -29,8 +29,8 @@ const CellStyle = StyleSheet.create({
       width: "100%",
       borderBottomWidth: 2,
       borderTopWidth: 2,
-      paddingHorizontal: '8px',
-      paddingVertical: '5px',
+      paddingHorizontal: 8,
+      paddingVertical: 8,
       ...fixedHeight({ size: 60 }),
    },
    'cell__text-primary': {

@@ -1,24 +1,25 @@
+import { logo } from '../../../assets/images'
 import ImageComponentStyles from './ImageComponent.styles'
 import ImageComponentProps from './ImageComponent.types'
 import React from 'react'
-import { Image, View } from 'react-native'
+import { Image, ImageSourcePropType, Platform, View } from 'react-native'
 
 function ImageComponent({
   style,
   wrapperStyle,
-  imageSrc,
+  imageSrc = logo,
   alt,
   isWrapped = false,
 }: ImageComponentProps) {
-  const currentImageSrc = imageSrc
-    .split('/')
-    .filter((elem) => elem !== elem.replace('.', ''))[0]
-    .split('.')[0]
+  let CurrentImage = imageSrc
+  if (Platform.OS !== 'web') {
+    CurrentImage = Image.resolveAssetSource(imageSrc as ImageSourcePropType).uri
+  }
 
   const image = (
     <Image
       style={[ImageComponentStyles['image-component'], style]}
-      source={require(`../../../assets/images/${currentImageSrc}.png`)}
+      source={{ uri: CurrentImage }}
       alt={alt}
     />
   )

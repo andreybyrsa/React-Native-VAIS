@@ -1,4 +1,4 @@
-import { onBoardingContent } from './assets/images'
+import { logo } from './assets/images'
 import Cell from './src/components/Cell'
 import ImageComponent from './src/components/ImageComponent'
 import React from 'react'
@@ -24,7 +24,7 @@ export default function App() {
       <ImageComponent
         style={{ height: 200, width: 200 }}
         wrapperStyle={{ height: 200, width: 200 }}
-        imageSrc={onBoardingContent}
+        imageSrc={logo}
         alt="image"
         isWrapped
       />
