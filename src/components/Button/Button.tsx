@@ -2,7 +2,8 @@ import Typography from '../Typography'
 import ButtonStyles from './Button.styles'
 import ButtonProps from './Button.types'
 import { useState } from 'react'
-import { Text, TouchableHighlight, View } from 'react-native'
+import React from 'react'
+import { TouchableHighlight, View } from 'react-native'
 
 function Button({
   style,
@@ -40,14 +41,15 @@ function Button({
         disabled={disabled}
       >
         <View>
-          <Text
+          <Typography
             style={[
               ButtonStyles[`button__text-${type}`],
               isPressed && ButtonStyles[`button__text-${type}--active`],
             ]}
+            variant="text-2"
           >
-            <Typography variant="text-2">{children}</Typography>
-          </Text>
+            {children}
+          </Typography>
         </View>
       </TouchableHighlight>
     </View>
