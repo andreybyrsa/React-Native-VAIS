@@ -1,32 +1,15 @@
-import { logo } from './assets/images'
-import Cell from './src/components/Cell'
-import ImageComponent from './src/components/ImageComponent'
+import { onBoardingContent } from './assets/images'
+import ImageComponent from './src/components/ImageComponent/ImageComponent'
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 
 export default function App() {
   return (
     <View style={style.container}>
-      <Cell
-        before={
-          <View>
-            <Text>ИКОНКА</Text>
-          </View>
-        }
-        after={
-          <View>
-            <Text>ИКОНКА</Text>
-          </View>
-        }
-        subtitle="Избранное"
-        text="Какой-то текст, который поразит мир"
-      />
       <ImageComponent
-        style={{ height: 200, width: 200 }}
-        wrapperStyle={{ height: 200, width: 200 }}
-        imageSrc={logo}
-        alt="image"
-        isWrapped
+        style={{ height: 100, width: 100 }}
+        imageSrc={onBoardingContent}
+        alt="onboarding"
       />
     </View>
   )
