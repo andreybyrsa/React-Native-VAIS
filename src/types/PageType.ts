@@ -1,7 +1,7 @@
 import { NavigationProp, ParamListBase } from '@react-navigation/native'
 
-interface PageTypes {
+interface PageType {
   navigation: NavigationProp<ParamListBase>
 }
 
-export default PageTypes
+export default PageType

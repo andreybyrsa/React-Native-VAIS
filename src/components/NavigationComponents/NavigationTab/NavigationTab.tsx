@@ -28,7 +28,7 @@ function NavigationTab({ style, to, iconName }: NavigationTabProps) {
       <IconComponent
         iconName={iconName}
         size={38}
-        color={isPressed ? 'color-icon-tertiary' : 'color-icon-primary'}
+        color={isPressed ? 'color-icon-primary' : 'color-icon-tertiary'}
       />
     </TouchableHighlight>
   )
