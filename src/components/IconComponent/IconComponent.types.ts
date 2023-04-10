@@ -2,9 +2,9 @@ import { ColorsType } from '../../../assets/styles/colors/colors'
 import { IconNames } from './IconNames'
 
 interface IconComponentProps {
-  nameIcons: IconNames
+  iconName: IconNames
   size?: number
-  color: ColorsType
+  color?: ColorsType
 }
 
 export default IconComponentProps
