@@ -1,16 +1,10 @@
-import { IconNames } from '../../IconComponent/IconNames'
+import NavLinkType from '../../../types/NavLinkType'
 import NavigationTab from '../NavigationTab'
 import NavigationSideBarStyles from './NavigationSideBar.styles'
 import NavigationSideBarProps from './NavigationSideBar.types'
 import { View } from 'react-native'
 
-interface NavLinksTypes {
-  id: number
-  iconName: IconNames
-  to: string
-}
-
-const navLinks: NavLinksTypes[] = [
+const navLinks: NavLinkType[] = [
   {
     id: 0,
     iconName: 'home-outline',

@@ -1,21 +1,15 @@
 import DevPage from '../pages/DevPage'
 import IndexPage from '../pages/IndexPage'
-import PageTypes from '../types/PageTypes'
+import RouteType from '../types/RouteType'
 
-interface RouteTypes {
-  id: number
-  path: string
-  component: ({ navigation }: PageTypes) => JSX.Element
-}
-
-const router: RouteTypes[] = [
+const router: RouteType[] = [
   {
-    id: 1,
+    id: 0,
     path: '/dev',
     component: DevPage,
   },
   {
-    id: 0,
+    id: 1,
     path: '/',
     component: IndexPage,
   },

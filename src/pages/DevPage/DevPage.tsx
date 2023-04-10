@@ -7,11 +7,11 @@ import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
 import Header from '../../layouts/Header'
 import PageLayout from '../../layouts/PageLayout'
-import PageTypes from '../../types/PageTypes'
+import PageType from '../../types/PageType'
 import DevPageStyles from './DevPage.styles'
 import React, { useMemo } from 'react'
 
-function DevPage({ navigation }: PageTypes) {
+function DevPage({ navigation }: PageType) {
   const header = useMemo(() => {
     return <Header leftSideSlot={<Typography variant="title-1">Dev Page</Typography>} />
   }, [])
@@ -42,6 +42,12 @@ function DevPage({ navigation }: PageTypes) {
         after={
           <IconComponent
             iconName="md-chevron-forward"
+            size={35}
+          />
+        }
+        before={
+          <IconComponent
+            iconName="ios-person-outline"
             size={35}
           />
         }
