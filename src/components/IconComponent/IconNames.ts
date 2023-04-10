@@ -1,5 +1,5 @@
 export type IconNames =
-  | 'home'
+  | 'home-outline'
   | 'checkmark'
   | 'close-outlie'
   | 'ios-heart-outline'
