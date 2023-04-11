@@ -6,7 +6,6 @@ import { Text, TouchableHighlight, View } from 'react-native'
 
 function Cell({
   style,
-  type = 'primary',
   title,
   subtitle,
   text,
@@ -35,18 +34,18 @@ function Cell({
     >
       <View
         style={[
-          CellStyle[`cell--${type}`],
-          isPressed && CellStyle[`cell-active--${type}`],
-          disabled && CellStyle[`cell-disabled--${type}`],
+          CellStyle[`cell`],
+          isPressed && CellStyle[`cell-active`],
+          disabled && CellStyle[`cell-disabled`],
           style,
         ]}
       >
         {before}
-        <Text style={[CellStyle[`cell__text-${type}`], style]}>
-          <Typography variant="title-3">{title}</Typography>
-          <Typography variant="title-6">{subtitle}</Typography>
-          <Typography variant="text-6">{text}</Typography>
-        </Text>
+        <View style={[CellStyle[`cell__text`], style]}>
+          { title && <Typography variant="title-3">{title}</Typography>}
+          { subtitle && <Typography variant="title-6">{subtitle}</Typography>}
+          { text && <Typography variant="text-6">{text}</Typography>}
+        </View>
         {after}
       </View>
     </TouchableHighlight>
