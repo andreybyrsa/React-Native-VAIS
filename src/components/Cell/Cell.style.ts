@@ -2,9 +2,10 @@ import { fixedHeight } from '../../../assets/styles/mixins/mixins'
 import { StyleSheet } from 'react-native'
 
 const CellStyle = StyleSheet.create({
-  'cell--primary': {
+  'cell': {
     display: 'flex',
     flexDirection: 'row',
+
     justifyContent: 'space-between',
     alignItems: 'center',
 
@@ -17,52 +18,20 @@ const CellStyle = StyleSheet.create({
     paddingVertical: 5,
     ...fixedHeight({ size: 60 }),
   },
-  'cell--secondary': {
+  'cell__text': {
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-
-    backgroundColor: '#02202B',
-    borderColor: '#00E4FF',
-
-    width: '100%',
-    borderBottomWidth: 2,
-    borderTopWidth: 2,
-    paddingHorizontal: 8,
-    paddingVertical: 8,
-    ...fixedHeight({ size: 60 }),
-  },
-  'cell__text-primary': {
-    display: 'flex',
+    flex: 1,
     flexDirection: 'column',
-    width: '100%',
     paddingHorizontal: 8,
     paddingVertical: 0,
-    textAlign: 'left',
-  },
-  'cell__text-secondary': {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '100%',
-    paddingHorizontal: 8,
-    paddingVertical: 0,
-    textAlign: 'left',
-    color: '#00E4FF',
   },
   'cell-button': {
     width: '100%',
   },
-  'cell-active--primary': {
+  'cell-active': {
     backgroundColor: '#8AA7BB',
   },
-  'cell-active--secondary': {
-    backgroundColor: '#FFFFFF',
-  },
-  'cell-disabled--secondary': {
-    backgroundColor: '#8AA7BB',
-  },
-  'cell-disabled--primary': {
+  'cell-disabled': {
     backgroundColor: '#A5B0B7',
   },
 })

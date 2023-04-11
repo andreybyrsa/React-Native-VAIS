@@ -41,30 +41,18 @@ function DevPage({ navigation }: PageType) {
       <Cell
         after={
           <IconComponent
-            iconName="md-chevron-forward"
-            size={35}
+          iconName="md-chevron-forward"
+          size={30}
           />
         }
+        subtitle='Избранное'
+        text='Какой-то супер бомбический текст'
         before={
           <IconComponent
-            iconName="ios-person-outline"
-            size={35}
-          />
-        }
-        title="Жеский cell"
-        text="Кирилл фристайла"
-      />
-      <Cell
-        after={
-          <IconComponent
-            iconName="pencil-sharp"
-            color="color-icon-secondary"
+            iconName="md-chevron-forward"
             size={30}
           />
         }
-        type="secondary"
-        title="Жеский cell 2"
-        text="Кирилл футбол"
       />
       <ImageComponent
         style={{ width: 150, height: 150 }}
