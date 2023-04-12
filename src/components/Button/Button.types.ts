@@ -1,6 +1,5 @@
-import { ViewStyle } from 'react-native';
-import { GestureResponderEvent } from 'react-native/types';
-
+import { ViewStyle } from 'react-native'
+import { GestureResponderEvent } from 'react-native/types'
 
 interface ButtonProps {
   style?: ViewStyle
