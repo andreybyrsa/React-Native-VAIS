@@ -15,6 +15,7 @@ function DevPage({ navigation }: PageType) {
   const header = useMemo(() => {
     return <Header leftSideSlot={<Typography variant="title-1">Dev Page</Typography>} />
   }, [])
+
   const footer = useMemo(() => {
     return (
       <Footer>
@@ -41,12 +42,12 @@ function DevPage({ navigation }: PageType) {
       <Cell
         after={
           <IconComponent
-          iconName="md-chevron-forward"
-          size={30}
+            iconName="md-chevron-forward"
+            size={30}
           />
         }
-        subtitle='Избранное'
-        text='Какой-то супер бомбический текст'
+        subtitle="Избранное"
+        text="Какой-то супер бомбический текст"
         before={
           <IconComponent
             iconName="md-chevron-forward"

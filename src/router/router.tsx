@@ -6,13 +6,13 @@ import RouteType from '../types/RouteType'
 const router: RouteType[] = [
   {
     id: 0,
-    path: '/on-boarding',
-    component: OnBoardingPage,
+    path: '/dev',
+    component: DevPage,
   },
   {
     id: 1,
-    path: '/dev',
-    component: DevPage,
+    path: '/on-boarding',
+    component: OnBoardingPage,
   },
   {
     id: 2,
