@@ -2,23 +2,21 @@ import { fixedHeight } from '../../../assets/styles/mixins/mixins'
 import { StyleSheet } from 'react-native'
 
 const CellStyle = StyleSheet.create({
-  'cell': {
-    display: 'flex',
-    flexDirection: 'row',
-
-    justifyContent: 'space-between',
-    alignItems: 'center',
-
+  cell: {
     backgroundColor: '#C3CFD7',
-
     width: '100%',
     borderBottomWidth: 1,
     borderTopWidth: 1,
     paddingHorizontal: 8,
     paddingVertical: 5,
     ...fixedHeight({ size: 60 }),
+
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
-  'cell__text': {
+  cell__text: {
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
