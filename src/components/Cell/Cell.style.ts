@@ -1,9 +1,10 @@
 import { fixedHeight } from '../../../assets/styles/mixins/mixins'
+import getCurrentColor from '../../utils/getCurrentColor'
 import { StyleSheet } from 'react-native'
 
 const CellStyle = StyleSheet.create({
   cell: {
-    backgroundColor: '#C3CFD7',
+    backgroundColor: getCurrentColor('color-background-primary'),
     width: '100%',
     borderBottomWidth: 1,
     borderTopWidth: 1,
@@ -17,20 +18,21 @@ const CellStyle = StyleSheet.create({
     alignItems: 'center',
   },
   cell__text: {
+    paddingHorizontal: 8,
+    paddingVertical: 0,
+
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
-    paddingHorizontal: 8,
-    paddingVertical: 0,
   },
   'cell-button': {
     width: '100%',
   },
   'cell-active': {
-    backgroundColor: '#8AA7BB',
+    backgroundColor: getCurrentColor('color-background-primary_active'),
   },
   'cell-disabled': {
-    backgroundColor: '#A5B0B7',
+    backgroundColor: getCurrentColor('color-background-light'),
   },
 })
 
