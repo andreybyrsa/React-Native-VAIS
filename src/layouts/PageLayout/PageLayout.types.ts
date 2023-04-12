@@ -10,6 +10,8 @@ interface PageLayoutProps {
   header?: React.ReactNode
   children?: React.ReactNode
   footer?: React.ReactNode
+
+  scroll?: boolean
 }
 
 export default PageLayoutProps
