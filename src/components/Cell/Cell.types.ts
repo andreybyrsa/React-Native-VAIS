@@ -4,8 +4,6 @@ import { GestureResponderEvent } from 'react-native/types';
 interface CellProps {
    style?: ViewStyle
 
-   type?: 'primary' | 'secondary'
-
    before?: React.ReactNode
    after?: React.ReactNode
 
