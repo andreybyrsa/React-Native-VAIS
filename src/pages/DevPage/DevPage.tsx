@@ -1,6 +1,7 @@
 import { logo } from '../../../assets/images'
 import Button from '../../components/Button'
 import Cell from '../../components/Cell'
+import IconButton from '../../components/IconButton'
 import IconComponent from '../../components/IconComponent'
 import ImageComponent from '../../components/ImageComponent'
 import Typography from '../../components/Typography'
@@ -15,9 +16,18 @@ function DevPage({ navigation }: PageType) {
   const header = useMemo(() => {
     return <Header leftSideSlot={<Typography variant="title-1">Dev Page</Typography>} />
   }, [])
+
   const footer = useMemo(() => {
     return (
-      <Footer>
+      <Footer
+        iconButton={
+          <IconButton
+            type="primary"
+            iconName="md-heart-sharp"
+            size={35}
+          />
+        }
+      >
         <Button onClick={() => navigation.navigate('/')}>Продолжить</Button>
       </Footer>
     )
@@ -41,12 +51,12 @@ function DevPage({ navigation }: PageType) {
       <Cell
         after={
           <IconComponent
-          iconName="md-chevron-forward"
-          size={30}
+            iconName="md-chevron-forward"
+            size={30}
           />
         }
-        subtitle='Избранное'
-        text='Какой-то супер бомбический текст'
+        subtitle="Избранное"
+        text="Какой-то супер бомбический текст"
         before={
           <IconComponent
             iconName="md-chevron-forward"

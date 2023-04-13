@@ -19,11 +19,8 @@ function PageLayout({
       <SafeAreaView style={[PageLayoutStyles['page-layout__header'], headerStyle]}>
         {header}
       </SafeAreaView>
-      <ScrollView
-        scrollEnabled={scroll}
-        style={[PageLayoutStyles['page-layout__content'], contentStyle]}
-      >
-        <View>{children}</View>
+      <ScrollView scrollEnabled={scroll}>
+        <View style={[PageLayoutStyles['page-layout__content'], contentStyle]}>{children}</View>
       </ScrollView>
       <SafeAreaView style={[PageLayoutStyles['page-lyaout__footer'], footerStyle]}>
         {footer}
