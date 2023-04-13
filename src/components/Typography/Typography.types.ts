@@ -4,7 +4,7 @@ import React from 'react'
 import { TextStyle, ViewStyle } from 'react-native'
 
 interface TypographyProps {
-  style?: ViewStyle | TextStyle
+  style?: ViewStyle | TextStyle | any
 
   variant?: TypographyVariantsType
 
