@@ -1,18 +1,19 @@
-import { ViewStyle } from 'react-native';
-import React from 'react';
-import { GestureResponderEvent } from 'react-native/types';
-import { IconNames } from '../IconComponent/IconNames';
+import { IconNames } from '../IconComponent/IconNames'
+import { ViewStyle } from 'react-native'
+import { GestureResponderEvent } from 'react-native/types'
 
 interface IconButtonProps {
   style?: ViewStyle
 
   iconName?: IconNames
+
   size?: number
 
   type?: 'primary' | 'secondary'
+
   disabled?: boolean
 
-  onClick?:  ((event: GestureResponderEvent) => void) | undefined
+  onClick?: ((event: GestureResponderEvent) => void) | undefined
 }
 
 export default IconButtonProps

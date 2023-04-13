@@ -1,7 +1,7 @@
 import { logo } from '../../../assets/images'
 import Button from '../../components/Button'
-import IconButton from '../../components/IconButton'
 import Cell from '../../components/Cell'
+import IconButton from '../../components/IconButton'
 import IconComponent from '../../components/IconComponent'
 import ImageComponent from '../../components/ImageComponent'
 import Typography from '../../components/Typography'
@@ -19,7 +19,15 @@ function DevPage({ navigation }: PageType) {
 
   const footer = useMemo(() => {
     return (
-      <Footer>
+      <Footer
+        iconButton={
+          <IconButton
+            type="primary"
+            iconName="md-heart-sharp"
+            size={35}
+          />
+        }
+      >
         <Button onClick={() => navigation.navigate('/')}>Продолжить</Button>
       </Footer>
     )
@@ -60,12 +68,6 @@ function DevPage({ navigation }: PageType) {
         style={{ width: 150, height: 150 }}
         imageSrc={logo}
         alt="logo"
-      />
-      <IconButton
-        // type='secondary'
-        type='primary'
-        iconName='md-heart-sharp'
-        size={35}
       />
     </PageLayout>
   )
