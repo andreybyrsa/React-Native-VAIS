@@ -1,5 +1,6 @@
 import { logo } from '../../../assets/images'
 import Button from '../../components/Button'
+import IconButton from '../../components/IconButton'
 import Cell from '../../components/Cell'
 import IconComponent from '../../components/IconComponent'
 import ImageComponent from '../../components/ImageComponent'
@@ -59,6 +60,15 @@ function DevPage({ navigation }: PageType) {
         style={{ width: 150, height: 150 }}
         imageSrc={logo}
         alt="logo"
+      />
+      <IconButton
+        // style={{width:50, height: 50, backgroundColor: '#000'}}
+        children = {
+          <IconComponent
+            iconName="md-chevron-forward"
+            size={30}
+          />
+        }
       />
     </PageLayout>
   )
