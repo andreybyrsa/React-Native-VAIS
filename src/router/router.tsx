@@ -1,6 +1,7 @@
 import DevPage from '../pages/DevPage'
 import IndexPage from '../pages/IndexPage'
 import OnBoardingPage from '../pages/OnBoardingPage'
+import ProfilePage from '../pages/ProfilePage'
 import RouteType from '../types/RouteType'
 
 const router: RouteType[] = [
@@ -18,6 +19,11 @@ const router: RouteType[] = [
     id: 2,
     path: '/',
     component: IndexPage,
+  },
+  {
+    id: 3,
+    path: '/profile',
+    component: ProfilePage,
   },
 ]
 
