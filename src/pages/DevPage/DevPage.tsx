@@ -61,13 +61,10 @@ function DevPage({ navigation }: PageType) {
         alt="logo"
       />
       <IconButton
-        // style={{width:50, height: 50, backgroundColor: '#000'}}
-        children = {
-          <IconComponent
-            iconName="md-chevron-forward"
-            size={30}
-          />
-        }
+        // type='secondary'
+        type='primary'
+        iconName='md-heart-sharp'
+        size={35}
       />
     </PageLayout>
   )

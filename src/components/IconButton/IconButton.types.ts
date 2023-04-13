@@ -1,11 +1,13 @@
 import { ViewStyle } from 'react-native';
 import React from 'react';
 import { GestureResponderEvent } from 'react-native/types';
+import { IconNames } from '../IconComponent/IconNames';
 
 interface IconButtonProps {
-  style?: ViewStyles
+  style?: ViewStyle
 
-  children?: React.ReactNode
+  iconName?: IconNames
+  size?: number
 
   type?: 'primary' | 'secondary'
   disabled?: boolean
