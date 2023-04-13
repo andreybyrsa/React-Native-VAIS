@@ -1,5 +1,6 @@
 import DevPage from '../pages/DevPage'
 import IndexPage from '../pages/IndexPage'
+import OnBoardingPage from '../pages/OnBoardingPage'
 import RouteType from '../types/RouteType'
 
 const router: RouteType[] = [
@@ -10,6 +11,11 @@ const router: RouteType[] = [
   },
   {
     id: 1,
+    path: '/on-boarding',
+    component: OnBoardingPage,
+  },
+  {
+    id: 2,
     path: '/',
     component: IndexPage,
   },

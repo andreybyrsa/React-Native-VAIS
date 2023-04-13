@@ -11,14 +11,16 @@ function PageLayout({
   header,
   children,
   footer,
+
+  scroll = true,
 }: PageLayoutProps) {
   return (
     <SafeAreaView style={[PageLayoutStyles['page-layout'], style]}>
       <SafeAreaView style={[PageLayoutStyles['page-layout__header'], headerStyle]}>
         {header}
       </SafeAreaView>
-      <ScrollView style={[PageLayoutStyles['page-layout__content']]}>
-        <View style={contentStyle}>{children}</View>
+      <ScrollView scrollEnabled={scroll}>
+        <View style={[PageLayoutStyles['page-layout__content'], contentStyle]}>{children}</View>
       </ScrollView>
       <SafeAreaView style={[PageLayoutStyles['page-lyaout__footer'], footerStyle]}>
         {footer}
