@@ -4,6 +4,7 @@ import Cell from '../../components/Cell'
 import IconButton from '../../components/IconButton'
 import IconComponent from '../../components/IconComponent'
 import ImageComponent from '../../components/ImageComponent'
+import NumberField from '../../components/Input/NumberField'
 import TextField from '../../components/Input/TextField'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
@@ -12,6 +13,7 @@ import PageLayout from '../../layouts/PageLayout'
 import PageType from '../../types/PageType'
 import DevPageStyles from './DevPage.styles'
 import React, { useMemo } from 'react'
+import { Text } from 'react-native'
 
 function DevPage({ navigation }: PageType) {
   const header = useMemo(() => {
@@ -63,8 +65,8 @@ function DevPage({ navigation }: PageType) {
         imageSrc={logo}
         alt="logo"
       />
-      <TextField
-        label="Имя"
+      <NumberField
+        label="Code"
         required
       />
     </PageLayout>
