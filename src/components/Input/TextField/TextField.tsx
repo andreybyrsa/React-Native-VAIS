@@ -1,9 +1,10 @@
+import { FormsTypes } from '../../../types/FormsTypes'
 import getCurrentColor from '../../../utils/getCurrentColor'
 import Typography from '../../Typography'
 import TextFieldStyles from './TextField.styles'
 import TextFieldProps from './TextField.types'
 import { Controller, useForm } from 'react-hook-form'
-import { NativeSyntheticEvent, Text, TextInput, TextInputChangeEventData, View } from 'react-native'
+import { NativeSyntheticEvent, TextInput, TextInputChangeEventData, View } from 'react-native'
 
 function TextField({
   style,
@@ -18,7 +19,7 @@ function TextField({
   const {
     control,
     formState: { errors },
-  } = useForm({
+  } = useForm<FormsTypes>({
     mode: 'onChange',
   })
 
