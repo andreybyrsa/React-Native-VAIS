@@ -1,3 +1,4 @@
+import useCustomFonts from '../../../hooks/useCustomFonts'
 import { FormsTypes } from '../../../types/FormsTypes'
 import getCurrentColor from '../../../utils/getCurrentColor'
 import getCurrentValidationIcon from '../../../utils/getCurrentValidationIcon'
@@ -6,7 +7,7 @@ import Typography from '../../Typography'
 import NumberFielsStyles from './NumberField.styles'
 import NumberFieldProps from './NumberField.types'
 import { Controller, useForm } from 'react-hook-form'
-import { NativeSyntheticEvent, TextInput, TextInputChangeEventData, View } from 'react-native'
+import { NativeSyntheticEvent, TextInput, TextInputChangeEventData, View, Text } from 'react-native'
 
 function NumberField({
   style,
@@ -18,6 +19,8 @@ function NumberField({
   maxLength = 5,
   minLength = 5,
 }: NumberFieldProps) {
+  const fonts = useCustomFonts()
+
   const {
     control,
     getValues,
@@ -38,6 +41,10 @@ function NumberField({
     if (setValue) {
       setValue(event.nativeEvent.text)
     }
+  }
+
+  if (!fonts) {
+    return <Text>Error fonts</Text>
   }
 
   return (

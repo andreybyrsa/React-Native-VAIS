@@ -13,7 +13,6 @@ import PageLayout from '../../layouts/PageLayout'
 import PageType from '../../types/PageType'
 import DevPageStyles from './DevPage.styles'
 import React, { useMemo } from 'react'
-import { Text } from 'react-native'
 
 function DevPage({ navigation }: PageType) {
   const header = useMemo(() => {
@@ -65,10 +64,11 @@ function DevPage({ navigation }: PageType) {
         imageSrc={logo}
         alt="logo"
       />
-      <NumberField
-        label="Code"
+      <TextField
+        label="Введите имя"
         required
       />
+      <NumberField required />
     </PageLayout>
   )
 }
