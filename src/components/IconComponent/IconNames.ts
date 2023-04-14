@@ -1,7 +1,7 @@
 export type IconNames =
   | 'home-outline'
   | 'checkmark'
-  | '`close-outlie`'
+  | 'close-outline'
   | 'ios-heart-outline'
   | 'ios-add-circle-outline'
   | 'md-heart-sharp'
