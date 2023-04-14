@@ -4,6 +4,8 @@ import Cell from '../../components/Cell'
 import IconButton from '../../components/IconButton'
 import IconComponent from '../../components/IconComponent'
 import ImageComponent from '../../components/ImageComponent'
+import NumberField from '../../components/Input/NumberField'
+import TextField from '../../components/Input/TextField'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
 import Header from '../../layouts/Header'
@@ -11,6 +13,7 @@ import PageLayout from '../../layouts/PageLayout'
 import PageType from '../../types/PageType'
 import DevPageStyles from './DevPage.styles'
 import React, { useMemo } from 'react'
+import { Text } from 'react-native'
 
 function DevPage({ navigation }: PageType) {
   const header = useMemo(() => {
@@ -41,13 +44,6 @@ function DevPage({ navigation }: PageType) {
     >
       <Button>Primary</Button>
       <Button type="secondary">Secondary</Button>
-      <Button disabled>Primary disabled</Button>
-      <Button
-        type="secondary"
-        disabled
-      >
-        Primary
-      </Button>
       <Cell
         after={
           <IconComponent
@@ -68,6 +64,10 @@ function DevPage({ navigation }: PageType) {
         style={{ width: 150, height: 150 }}
         imageSrc={logo}
         alt="logo"
+      />
+      <NumberField
+        label="Code"
+        required
       />
     </PageLayout>
   )
