@@ -5,6 +5,7 @@ import IconButton from '../../components/IconButton'
 import IconComponent from '../../components/IconComponent'
 import ImageComponent from '../../components/ImageComponent'
 import NumberField from '../../components/Input/NumberField'
+import PhoneField from '../../components/Input/PhoneField'
 import TextField from '../../components/Input/TextField'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
@@ -63,6 +64,10 @@ function DevPage({ navigation }: PageType) {
         style={{ width: 150, height: 150 }}
         imageSrc={logo}
         alt="logo"
+      />
+      <PhoneField
+        label="Номер телефона"
+        required
       />
       <TextField
         label="Введите имя"
