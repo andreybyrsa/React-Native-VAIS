@@ -10,10 +10,6 @@ const NumberFielsStyles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingBottom: 4,
   },
-  'number-field-error': {
-    paddingTop: 4,
-    paddingHorizontal: 10,
-  },
   'number-filed': {
     position: 'relative',
 

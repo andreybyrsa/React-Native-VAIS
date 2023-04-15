@@ -5,7 +5,7 @@ import Typography from '../../Typography'
 import TextFieldStyles from './TextField.styles'
 import TextFieldProps from './TextField.types'
 import { Controller, useForm } from 'react-hook-form'
-import { NativeSyntheticEvent, TextInput, TextInputChangeEventData, View, Text } from 'react-native'
+import { NativeSyntheticEvent, Text, TextInput, TextInputChangeEventData, View } from 'react-native'
 
 function TextField({
   style,
@@ -80,6 +80,7 @@ function TextField({
               isRequired && TextFieldStyles['text-field--required'],
               style,
             ]}
+            selectionColor={getCurrentColor('color-text-primary')}
             placeholderTextColor={CurrentPlaceholderColor}
             placeholder={placeholder}
             onChange={onHandlerChange}
