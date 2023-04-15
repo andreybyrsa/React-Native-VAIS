@@ -2,15 +2,15 @@ import { fixedHeight } from '../../../../assets/styles/mixins/mixins'
 import getCurrentColor from '../../../utils/getCurrentColor'
 import { StyleSheet } from 'react-native'
 
-const NumberFielsStyles = StyleSheet.create({
-  'number-field-wrapper': {
+const PhoneFieldStyles = StyleSheet.create({
+  'phone-field-wrapper': {
     width: '100%',
   },
-  'number-field-label': {
+  'phone-field-label': {
     paddingHorizontal: 10,
     paddingBottom: 4,
   },
-  'number-filed': {
+  'phone-filed': {
     position: 'relative',
 
     ...fixedHeight({ size: 44 }),
@@ -24,16 +24,16 @@ const NumberFielsStyles = StyleSheet.create({
 
     flex: 1,
   },
-  'number-field__icon': {
+  'phone-field__icon': {
     position: 'absolute',
     right: 12,
     top: 3,
   },
 
-  'number-field--primary': {
+  'phone-field--primary': {
     backgroundColor: getCurrentColor('color-input-primary'),
   },
-  'number-field--secondary': {
+  'phone-field--secondary': {
     backgroundColor: getCurrentColor('color-input-secondary'),
     borderStyle: 'solid',
     borderWidth: 2,
@@ -42,7 +42,7 @@ const NumberFielsStyles = StyleSheet.create({
 
     color: getCurrentColor('color-text-secondary'),
   },
-  'number-field--required': {
+  'phone-field--required': {
     backgroundColor: getCurrentColor('color-input-primary_error'),
     borderStyle: 'solid',
     borderWidth: 1,
@@ -51,4 +51,4 @@ const NumberFielsStyles = StyleSheet.create({
   },
 })
 
-export default NumberFielsStyles
+export default PhoneFieldStyles

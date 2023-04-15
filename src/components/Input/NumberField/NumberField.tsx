@@ -7,7 +7,7 @@ import Typography from '../../Typography'
 import NumberFielsStyles from './NumberField.styles'
 import NumberFieldProps from './NumberField.types'
 import { Controller, useForm } from 'react-hook-form'
-import { NativeSyntheticEvent, TextInput, TextInputChangeEventData, View, Text } from 'react-native'
+import { NativeSyntheticEvent, Text, TextInput, TextInputChangeEventData, View } from 'react-native'
 
 function NumberField({
   style,
@@ -74,8 +74,10 @@ function NumberField({
                 isRequired && NumberFielsStyles['number-field--required'],
                 style,
               ]}
+              selectionColor={getCurrentColor('color-text-primary')}
               placeholderTextColor={CurrentPlaceholderColor}
               placeholder={placeholder}
+              keyboardType='phone-pad'
               onChange={onHandlerChange}
               onChangeText={onChange}
             />
