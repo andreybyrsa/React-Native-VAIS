@@ -6,6 +6,7 @@ import IconComponent from '../../IconComponent'
 import Typography from '../../Typography'
 import NumberFielsStyles from './NumberField.styles'
 import NumberFieldProps from './NumberField.types'
+import React, { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { NativeSyntheticEvent, Text, TextInput, TextInputChangeEventData, View } from 'react-native'
 
@@ -15,6 +16,7 @@ function NumberField({
   placeholder = 'Введите код',
   type = 'primary',
   setValue,
+  setError,
   required = false,
   maxLength = 5,
   minLength = 5,
@@ -28,6 +30,12 @@ function NumberField({
   } = useForm<FormsTypes>({
     mode: 'onChange',
   })
+
+  useEffect(() => {
+    if (setError) {
+      setError(`${errors?.numberField?.type}`)
+    }
+  }, [errors?.numberField?.type])
 
   const isRequired = errors?.numberField?.type === 'required'
 
@@ -77,7 +85,7 @@ function NumberField({
               selectionColor={getCurrentColor('color-text-primary')}
               placeholderTextColor={CurrentPlaceholderColor}
               placeholder={placeholder}
-              keyboardType='phone-pad'
+              keyboardType="phone-pad"
               onChange={onHandlerChange}
               onChangeText={onChange}
             />

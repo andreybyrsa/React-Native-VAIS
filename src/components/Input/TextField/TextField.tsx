@@ -4,6 +4,7 @@ import getCurrentColor from '../../../utils/getCurrentColor'
 import Typography from '../../Typography'
 import TextFieldStyles from './TextField.styles'
 import TextFieldProps from './TextField.types'
+import { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { NativeSyntheticEvent, Text, TextInput, TextInputChangeEventData, View } from 'react-native'
 
@@ -13,6 +14,7 @@ function TextField({
   placeholder = 'Введите текст',
   type = 'primary',
   setValue,
+  setError,
   required = false,
   maxLength = 15,
   minLength = 2,
@@ -25,6 +27,12 @@ function TextField({
   } = useForm<FormsTypes>({
     mode: 'onChange',
   })
+
+  useEffect(() => {
+    if (setError) {
+      setError(`${errors?.textField?.type}`)
+    }
+  }, [errors?.textField?.type])
 
   const isRequired = errors?.textField?.type === 'required'
 

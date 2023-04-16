@@ -1,5 +1,4 @@
 import { useFonts } from 'expo-font'
-import { Text } from 'react-native'
 
 const useCustomFonts = () => {
   const [fonts] = useFonts({
@@ -10,7 +9,7 @@ const useCustomFonts = () => {
   })
 
   if (!fonts) {
-    return console.log('Error fonts')
+    return false
   }
 
   return fonts

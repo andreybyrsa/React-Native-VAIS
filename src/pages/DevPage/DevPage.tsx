@@ -13,9 +13,12 @@ import Header from '../../layouts/Header'
 import PageLayout from '../../layouts/PageLayout'
 import PageType from '../../types/PageType'
 import DevPageStyles from './DevPage.styles'
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 
 function DevPage({ navigation }: PageType) {
+  const [error, setError] = useState<string>('')
+  console.log(error)
+
   const header = useMemo(() => {
     return <Header leftSideSlot={<Typography variant="title-1">Dev Page</Typography>} />
   }, [])
