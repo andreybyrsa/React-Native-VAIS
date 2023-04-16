@@ -9,6 +9,7 @@ interface PhoneFieldProps {
   type?: 'primary' | 'secondary'
 
   setValue?: React.Dispatch<SetStateAction<string>>
+  setError?: React.Dispatch<SetStateAction<string>>
 
   required?: boolean
 }

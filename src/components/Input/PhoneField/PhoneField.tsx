@@ -8,7 +8,7 @@ import IconComponent from '../../IconComponent'
 import Typography from '../../Typography'
 import PhoneFieldStyles from './PhoneField.styles'
 import PhoneFieldProps from './PhoneField.types'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import React from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { NativeSyntheticEvent, Text, TextInput, TextInputChangeEventData, View } from 'react-native'
@@ -18,6 +18,7 @@ function PhoneField({
   label,
   type = 'primary',
   setValue,
+  setError,
   required = false,
 }: PhoneFieldProps) {
   const [currentPhoneValue, setCurrentPhoneValue] = useState<string>('+7')
@@ -32,6 +33,12 @@ function PhoneField({
   } = useForm<FormsTypes>({
     mode: 'onChange',
   })
+
+  useEffect(() => {
+    if (setError) {
+      setError(`${errors?.phoneField?.type}`)
+    }
+  }, [errors?.phoneField?.type])
 
   const onHandlerChange = (event: NativeSyntheticEvent<TextInputChangeEventData>) => {
     const currentEventValue = replacePhoneSymbols(event.nativeEvent.text)
