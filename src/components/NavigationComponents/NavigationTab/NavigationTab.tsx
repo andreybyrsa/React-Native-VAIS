@@ -14,9 +14,7 @@ function NavigationTab({ style, to, iconName, navigationName }: NavigationTabPro
   const getCurrentNavigationColor = (currentComponent: string) => {
     if (currentComponent === 'icon') {
       return router.name === to ? 'color-icon-tertiary' : 'color-icon-primary'
-    }
-
-    if (currentComponent === 'text') {
+    } else {
       return router.name === to ? 'color-text-tertiary' : 'color-text-primary'
     }
   }
