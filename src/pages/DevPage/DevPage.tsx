@@ -3,6 +3,7 @@ import Button from '../../components/Button'
 import Cell from '../../components/Cell'
 import IconComponent from '../../components/IconComponent'
 import ImageComponent from '../../components/ImageComponent'
+import LookLoader from '../../components/Loaders/LookLoader'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
 import Header from '../../layouts/Header'
@@ -54,6 +55,13 @@ function DevPage({ navigation }: PageType) {
           />
         }
       />
+      <LookLoader>
+        <ImageComponent
+          style={{ width: 150, height: 150 }}
+          imageSrc={logo}
+          alt="logo"
+        />
+      </LookLoader>
       <ImageComponent
         style={{ width: 150, height: 150 }}
         imageSrc={logo}
