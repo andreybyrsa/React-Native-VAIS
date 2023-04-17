@@ -1,3 +1,4 @@
+import AuthPage from '../pages/AuthPage'
 import DevPage from '../pages/DevPage'
 import IndexPage from '../pages/IndexPage'
 import OnBoardingPage from '../pages/OnBoardingPage'
@@ -7,13 +8,13 @@ import RouteType from '../types/RouteType'
 const router: RouteType[] = [
   {
     id: 0,
-    path: '/dev',
-    component: DevPage,
+    path: '/on-boarding',
+    component: OnBoardingPage,
   },
   {
     id: 1,
-    path: '/on-boarding',
-    component: OnBoardingPage,
+    path: '/auth',
+    component: AuthPage,
   },
   {
     id: 2,
@@ -22,6 +23,11 @@ const router: RouteType[] = [
   },
   {
     id: 3,
+    path: '/dev',
+    component: DevPage,
+  },
+  {
+    id: 4,
     path: '/profile',
     component: ProfilePage,
   },
