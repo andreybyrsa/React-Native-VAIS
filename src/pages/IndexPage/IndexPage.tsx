@@ -33,6 +33,7 @@ function IndexPage() {
     <PageLayout
       header={header}
       footer={footer}
+      footerIsNavigation
     />
   )
 }
