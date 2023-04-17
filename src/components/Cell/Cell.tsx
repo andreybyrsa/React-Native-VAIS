@@ -2,7 +2,7 @@ import Typography from '../Typography'
 import CellStyle from './Cell.style'
 import CellProps from './Cell.types'
 import { useState } from 'react'
-import { Text, TouchableHighlight, View } from 'react-native'
+import { TouchableHighlight, View } from 'react-native'
 
 function Cell({
   style,
@@ -42,9 +42,9 @@ function Cell({
       >
         {before}
         <View style={[CellStyle[`cell__text`], style]}>
-          { title && <Typography variant="title-3">{title}</Typography>}
-          { subtitle && <Typography variant="title-6">{subtitle}</Typography>}
-          { text && <Typography variant="text-6">{text}</Typography>}
+          {title && <Typography variant="title-3">{title}</Typography>}
+          {subtitle && <Typography variant="title-6">{subtitle}</Typography>}
+          {text && <Typography variant="text-6">{text}</Typography>}
         </View>
         {after}
       </View>
