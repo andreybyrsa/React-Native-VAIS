@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, Animated } from 'react-native'
 import LookLoaderProps from './LookLoader.types'
 import { useRef, useEffect } from 'react';
-import { RotateInDownRight } from 'react-native-reanimated';
+// import { RotateInDownRight } from 'react-native-reanimated';
 
 const LookLoader = ({children}: LookLoaderProps) => {
   const fadeAnim = useRef(new Animated.Value(0)).current

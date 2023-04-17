@@ -49,6 +49,7 @@ const Colors = {
 
   //? Background colors
   'color-background-primary': '#C3CFD7',
+  'color-background-primary_active': '#8AA7BB',
   'color-background-secondary': '#264A5A',
   'color-background-tertiary': '#FFFFFF',
   'color-background-dark': '#052E3E',

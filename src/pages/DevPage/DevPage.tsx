@@ -1,24 +1,40 @@
 import { logo } from '../../../assets/images'
 import Button from '../../components/Button'
 import Cell from '../../components/Cell'
+import IconButton from '../../components/IconButton'
 import IconComponent from '../../components/IconComponent'
 import ImageComponent from '../../components/ImageComponent'
-import LookLoader from '../../components/Loaders/LookLoader'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
 import Header from '../../layouts/Header'
 import PageLayout from '../../layouts/PageLayout'
 import PageType from '../../types/PageType'
 import DevPageStyles from './DevPage.styles'
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
+import LookLoader from '../../components/Loaders/LookLoader'
+import PhoneField from '../../components/Input/PhoneField'
+import TextField from '../../components/Input/TextField'
+import NumberField from '../../components/Input/NumberField'
 
 function DevPage({ navigation }: PageType) {
+  const [error, setError] = useState<string>('')
+  console.log(error)
+
   const header = useMemo(() => {
     return <Header leftSideSlot={<Typography variant="title-1">Dev Page</Typography>} />
   }, [])
+
   const footer = useMemo(() => {
     return (
-      <Footer>
+      <Footer
+        iconButton={
+          <IconButton
+            type="primary"
+            iconName="md-heart-sharp"
+            size={35}
+          />
+        }
+      >
         <Button onClick={() => navigation.navigate('/')}>Продолжить</Button>
       </Footer>
     )
@@ -32,22 +48,15 @@ function DevPage({ navigation }: PageType) {
     >
       <Button>Primary</Button>
       <Button type="secondary">Secondary</Button>
-      <Button disabled>Primary disabled</Button>
-      <Button
-        type="secondary"
-        disabled
-      >
-        Primary
-      </Button>
       <Cell
         after={
           <IconComponent
-          iconName="md-chevron-forward"
-          size={30}
+            iconName="md-chevron-forward"
+            size={30}
           />
         }
-        subtitle='Избранное'
-        text='Какой-то супер бомбический текст'
+        subtitle="Избранное"
+        text="Какой-то супер бомбический текст"
         before={
           <IconComponent
             iconName="md-chevron-forward"
@@ -67,6 +76,15 @@ function DevPage({ navigation }: PageType) {
         imageSrc={logo}
         alt="logo"
       />
+      <PhoneField
+        label="Номер телефона"
+        required
+      />
+      <TextField
+        label="Введите имя"
+        required
+      />
+      <NumberField required />
     </PageLayout>
   )
 }
