@@ -1,19 +1,24 @@
 import IconComponent from '../../IconComponent'
+import Typography from '../../Typography'
 import NavigationTabStyles from './NavigationTab.styles'
 import NavigationTabProps from './NavigationTab.types'
-import { useNavigation } from '@react-navigation/native'
-import React, { useState } from 'react'
+import { useNavigation, useRoute } from '@react-navigation/native'
+import React from 'react'
 import { TouchableHighlight } from 'react-native'
+import { View } from 'react-native'
 
-function NavigationTab({ style, to, iconName }: NavigationTabProps) {
-  const [isPressed, setIsPressed] = useState<boolean>(false)
+function NavigationTab({ style, to, iconName, navigationName }: NavigationTabProps) {
   const navigation = useNavigation()
+  const router = useRoute()
 
-  const onHandlerFocus = () => {
-    setIsPressed(true)
-  }
-  const onHandlerBlur = () => {
-    setIsPressed(false)
+  const getCurrentNavigationColor = (currentComponent: string) => {
+    if (currentComponent === 'icon') {
+      return router.name === to ? 'color-icon-tertiary' : 'color-icon-primary'
+    }
+
+    if (currentComponent === 'text') {
+      return router.name === to ? 'color-text-tertiary' : 'color-text-primary'
+    }
   }
 
   return (
@@ -22,14 +27,20 @@ function NavigationTab({ style, to, iconName }: NavigationTabProps) {
       activeOpacity={1}
       underlayColor="transparent"
       onPress={() => navigation.navigate(to as never)}
-      onHideUnderlay={onHandlerBlur}
-      onShowUnderlay={onHandlerFocus}
     >
-      <IconComponent
-        iconName={iconName}
-        size={38}
-        color={isPressed ? 'color-icon-primary' : 'color-icon-tertiary'}
-      />
+      <View style={NavigationTabStyles['navigation-tab__button']}>
+        <IconComponent
+          iconName={iconName}
+          size={30}
+          color={getCurrentNavigationColor('icon')}
+        />
+        <Typography
+          variant="text-6"
+          color={getCurrentNavigationColor('text')}
+        >
+          {navigationName}
+        </Typography>
+      </View>
     </TouchableHighlight>
   )
 }
