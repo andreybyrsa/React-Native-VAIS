@@ -5,6 +5,7 @@ interface NavigationTabProps {
   style?: ViewStyle
   to: string
   iconName: IconNames
+  navigationName: string
 }
 
 export default NavigationTabProps

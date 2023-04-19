@@ -44,6 +44,7 @@ function ProfilePage() {
       contentStyle={ProfilePageStyle['profile-page__content']}
       header={header}
       footer={footer}
+      footerIsNavigation
       scroll={false}
     >
       <View style={ProfilePageStyle['profile-page__profile-info']}>
