@@ -5,7 +5,7 @@ const HeaderStyles = StyleSheet.create({
   header: {
     backgroundColor: getCurrentColor('color-background-primary'),
     width: '100%',
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 8,
     paddingBottom: 16,
     paddingHorizontal: 20,
 
