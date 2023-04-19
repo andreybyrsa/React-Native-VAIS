@@ -6,6 +6,18 @@ const AuthPageStyles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
+  'auth-page__avatar-image-container': {
+    height: 170,
+
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  'auth-page__avatar-image': {
+    width: 150,
+    height: 150,
+    borderRadius: 100,
+  },
   'auth-page__inputs': {
     width: '100%',
 

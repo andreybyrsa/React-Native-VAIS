@@ -49,7 +49,7 @@ function ProfilePage() {
     >
       <View style={ProfilePageStyle['profile-page__profile-info']}>
         <IconComponent
-          iconName="ios-person-circle"
+          iconName="ios-person-circle-outline"
           size={70}
         />
         <View>
