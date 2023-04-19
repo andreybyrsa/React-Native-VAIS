@@ -17,7 +17,7 @@ const FooterStyles = StyleSheet.create({
   },
   'footer--is-navigation': {
     paddingHorizontal: 0,
-    paddingBottom: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+    paddingBottom: 0,
   },
 })
 
