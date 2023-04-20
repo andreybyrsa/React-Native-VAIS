@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 const IconComponentStyles = StyleSheet.create({
-   'iconComponent': {}
+  'icon-component': {},
 })
 
 export default IconComponentStyles

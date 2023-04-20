@@ -13,13 +13,13 @@ function ImageComponent({
 }: ImageComponentProps) {
   let CurrentImage = imageSrc
   if (Platform.OS !== 'web') {
-    CurrentImage = Image.resolveAssetSource(imageSrc as ImageSourcePropType).uri
+    CurrentImage = Image.resolveAssetSource(imageSrc as ImageSourcePropType)?.uri
   }
 
   const image = (
     <Image
       style={[ImageComponentStyles['image-component'], style]}
-      source={{ uri: CurrentImage }}
+      source={{ uri: `${CurrentImage}` }}
       alt={alt}
     />
   )

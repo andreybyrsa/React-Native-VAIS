@@ -14,7 +14,7 @@ function OnBoardingPage() {
   const naviation = useNavigation()
 
   const navigateToAuth = () => {
-    naviation.navigate('auth' as never)
+    naviation.navigate('/auth' as never)
   }
 
   const slideNext = () => {
