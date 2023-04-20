@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3f4dbba9-bc59-42a6-9cdc-62e0ea241150" name="Changes" comment="Исправил Ошибку с компонентом Cell. Убрал пропс type">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2023_22_44_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2023_22_44__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/lookLoaderBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Loaders/LookLoader/LookLoader.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loaders/LookLoader/LookLoader.styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Loaders/LookLoader/LookLoader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loaders/LookLoader/LookLoader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Loaders/LookLoader/LookLoader.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loaders/LookLoader/LookLoader.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Footer/Footer.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Footer/Footer.styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DevPage/DevPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DevPage/DevPage.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2OHwxXKP33AijBGDiaHnn0vB3gX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kirya/Documents/react-native-vais&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f4dbba9-bc59-42a6-9cdc-62e0ea241150" name="Changes" comment="" />
+      <created>1681231063270</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681231063270</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Исправил Ошибку с компонентом Cell. Убрал пропс type">
+      <created>1681243760568</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681243760568</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Исправил Ошибку с компонентом Cell. Убрал пропс type" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил Ошибку с компонентом Cell. Убрал пропс type" />
+  </component>
+</project>
