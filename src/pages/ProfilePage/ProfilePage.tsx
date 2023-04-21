@@ -1,15 +1,19 @@
 import Button from '../../components/Button'
 import Cell from '../../components/Cell'
 import IconComponent from '../../components/IconComponent'
+import ImageComponent from '../../components/ImageComponent'
 import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
 import Header from '../../layouts/Header'
 import PageLayout from '../../layouts/PageLayout'
+import UserSelector from '../../store/reducers/user/UserSelector'
 import CellContentType from '../../types/CellContentType'
+import getPhoneMaskPattern from '../../utils/getPhoneMaskPattern'
 import ProfilePageStyle from './ProfilePage.styles'
 import { useMemo } from 'react'
 import { View } from 'react-native'
+import { useSelector } from 'react-redux'
 
 const Cells: CellContentType[] = [
   {
@@ -27,6 +31,8 @@ const Cells: CellContentType[] = [
 ]
 
 function ProfilePage() {
+  const user = useSelector(UserSelector())
+
   const header = useMemo(() => {
     return <Header leftSideSlot={<Typography variant="title-1">Профиль</Typography>} />
   }, [])
@@ -48,13 +54,23 @@ function ProfilePage() {
       scroll={false}
     >
       <View style={ProfilePageStyle['profile-page__profile-info']}>
-        <IconComponent
-          iconName="ios-person-circle-outline"
-          size={70}
-        />
+        {user?.profilePic ? (
+          <ImageComponent
+            style={ProfilePageStyle['profile-page__profile-pic']}
+            imageSrc={user.profilePic}
+            alt="avatar"
+          />
+        ) : (
+          <IconComponent
+            iconName="ios-person-circle-outline"
+            size={70}
+          />
+        )}
         <View>
-          <Typography variant="title-3">Имя: Kirill</Typography>
-          <Typography variant="title-3">Телефон: 81112224455</Typography>
+          <Typography variant="text-2">Имя: {user?.userName}</Typography>
+          <Typography variant="text-2">
+            Телефон: {getPhoneMaskPattern(`${user?.phoneNumber}`)}
+          </Typography>
         </View>
       </View>
 

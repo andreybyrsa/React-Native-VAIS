@@ -9,6 +9,11 @@ const ProfilePageStyle = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
   },
+  'profile-page__profile-pic': {
+    width: 70,
+    height: 70,
+    borderRadius: 100,
+  },
 })
 
 export default ProfilePageStyle

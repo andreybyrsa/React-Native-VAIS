@@ -7,14 +7,17 @@ import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
 import Header from '../../layouts/Header'
 import PageLayout from '../../layouts/PageLayout'
+import { setUser } from '../../store/reducers/user/UserReducer'
 import AuthPageStyles from './AuthPage.styles'
 import { useNavigation } from '@react-navigation/native'
 import { ImagePickerAsset, MediaTypeOptions, launchImageLibraryAsync } from 'expo-image-picker'
-import React, { useMemo, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import { TouchableHighlight, View } from 'react-native'
+import { useDispatch } from 'react-redux'
 
 function AuthPage() {
   const navigation = useNavigation()
+  const dispatch = useDispatch()
 
   const [userName, setUserName] = useState<string>('')
   const [phoneNumber, setPhoneNumber] = useState<string>('+7')
@@ -35,9 +38,16 @@ function AuthPage() {
     }
   }
 
-  const navigateToPhoneConfirmPage = () => {
+  const onHandlerSubmit = useCallback(() => {
+    dispatch(
+      setUser({
+        userName,
+        phoneNumber,
+        profilePic: image,
+      }),
+    )
     return navigation.navigate('/phone-confirm' as never)
-  }
+  }, [userName, phoneNumber, image])
 
   const buttonDisable = !!userName && phoneNumber !== '+7' && errorValue === 'undefined'
 
@@ -50,13 +60,13 @@ function AuthPage() {
       <Footer>
         <Button
           disabled={!buttonDisable}
-          onClick={navigateToPhoneConfirmPage}
+          onClick={onHandlerSubmit}
         >
           Войти
         </Button>
       </Footer>
     )
-  }, [buttonDisable])
+  }, [buttonDisable, onHandlerSubmit])
 
   return (
     <PageLayout
@@ -125,3 +135,7 @@ function AuthPage() {
 }
 
 export default AuthPage
+
+function dispatch(arg0: any) {
+  throw new Error('Function not implemented.')
+}
