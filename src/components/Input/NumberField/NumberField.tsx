@@ -65,7 +65,6 @@ function NumberField({
           {label}
         </Typography>
       )}
-      <View>
         <Controller
           control={control}
           rules={{
@@ -92,17 +91,6 @@ function NumberField({
           )}
           name="numberField"
         />
-        {!getValues('numberField') ? (
-          <View />
-        ) : (
-          <IconComponent
-            iconStyle={NumberFielsStyles['number-field__icon']}
-            iconName={getCurrentValidationIcon(`${errors?.numberField?.type}`, isRequired)}
-            color={errors?.numberField ? 'color-icon-error' : 'color-icon-correct'}
-            size={35}
-          />
-        )}
-      </View>
     </View>
   )
 }

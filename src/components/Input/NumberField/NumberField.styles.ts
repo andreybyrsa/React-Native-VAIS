@@ -11,8 +11,6 @@ const NumberFielsStyles = StyleSheet.create({
     paddingBottom: 4,
   },
   'number-filed': {
-    position: 'relative',
-
     ...fixedHeight({ size: 44 }),
     borderRadius: 10,
     paddingVertical: 0,
@@ -23,11 +21,6 @@ const NumberFielsStyles = StyleSheet.create({
     lineHeight: 24,
 
     flex: 1,
-  },
-  'number-field__icon': {
-    position: 'absolute',
-    right: 12,
-    top: 3,
   },
 
   'number-field--primary': {

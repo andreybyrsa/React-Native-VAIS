@@ -1,4 +1,4 @@
-import { ImagePickerAsset } from "expo-image-picker"
+import { ImagePickerAsset } from 'expo-image-picker'
 
 export type User = {
   id?: string
