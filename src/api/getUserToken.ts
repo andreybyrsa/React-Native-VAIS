@@ -11,7 +11,7 @@ const getUserToken = async (verifyRequest: verifyRequest) => {
       ...verifyRequest,
     })
     .then((response) => response.data)
-    .catch((error) => console.log(error))
+    .catch((error) => console.log(`verify ${error}`))
 }
 
 export default getUserToken

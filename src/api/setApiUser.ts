@@ -6,6 +6,6 @@ export const setApiUser = async (user: User) => {
     .post('https://virtual-ai-stylist-backend.onrender.com/auth', {
       ...user,
     })
-    .then((response) => response)
-    .catch((error) => console.log(error))
+    .then((response) => response.data)
+    .catch((error) => console.log(`auth ${error}`))
 }
