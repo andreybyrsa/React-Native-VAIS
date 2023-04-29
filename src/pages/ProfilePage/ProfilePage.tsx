@@ -1,7 +1,6 @@
 import Button from '../../components/Button'
 import Cell from '../../components/Cell'
 import IconComponent from '../../components/IconComponent'
-import ImageComponent from '../../components/ImageComponent'
 import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
@@ -12,7 +11,7 @@ import CellContentType from '../../types/CellContentType'
 import getPhoneMaskPattern from '../../utils/getPhoneMaskPattern'
 import ProfilePageStyle from './ProfilePage.styles'
 import { useMemo } from 'react'
-import { View } from 'react-native'
+import { Image, View } from 'react-native'
 import { useSelector } from 'react-redux'
 
 const Cells: CellContentType[] = [
@@ -55,9 +54,9 @@ function ProfilePage() {
     >
       <View style={ProfilePageStyle['profile-page__profile-info']}>
         {user?.profilePic ? (
-          <ImageComponent
+          <Image
             style={ProfilePageStyle['profile-page__profile-pic']}
-            imageSrc={user.profilePic}
+            source={{ uri: `${user.profilePic}` }}
             alt="avatar"
           />
         ) : (
