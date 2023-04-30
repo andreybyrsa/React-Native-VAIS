@@ -13,8 +13,10 @@ const NavigationTabStyles = StyleSheet.create({
     alignItems: 'center',
   },
   'navigation-tab__button': {
-    width: '100%',
-    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 2,
   },
 })
 

@@ -13,19 +13,26 @@ function PageLayout({
   footer,
 
   scroll = true,
+  footerIsNavigation = false,
 }: PageLayoutProps) {
   return (
-    <SafeAreaView style={[PageLayoutStyles['page-layout'], style]}>
+    <View style={[PageLayoutStyles['page-layout'], style]}>
       <SafeAreaView style={[PageLayoutStyles['page-layout__header'], headerStyle]}>
         {header}
       </SafeAreaView>
       <ScrollView scrollEnabled={scroll}>
         <View style={[PageLayoutStyles['page-layout__content'], contentStyle]}>{children}</View>
       </ScrollView>
-      <SafeAreaView style={[PageLayoutStyles['page-lyaout__footer'], footerStyle]}>
+      <SafeAreaView
+        style={[
+          PageLayoutStyles['page-lyaout__footer'],
+          footerIsNavigation && PageLayoutStyles['page-lyaout__footer-navigation'],
+          footerStyle,
+        ]}
+      >
         {footer}
       </SafeAreaView>
-    </SafeAreaView>
+    </View>
   )
 }
 

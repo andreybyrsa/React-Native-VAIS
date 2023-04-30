@@ -12,6 +12,7 @@ interface PageLayoutProps {
   footer?: React.ReactNode
 
   scroll?: boolean
+  footerIsNavigation?: boolean
 }
 
 export default PageLayoutProps

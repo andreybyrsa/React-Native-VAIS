@@ -1,12 +1,12 @@
-import getCurrentColor from '../../utils/getCurrentColor';
-import { StyleSheet } from 'react-native';
-
+import getCurrentColor from '../../utils/getCurrentColor'
+import { Platform, StatusBar, StyleSheet } from 'react-native'
 
 const HeaderStyles = StyleSheet.create({
   header: {
     backgroundColor: getCurrentColor('color-background-primary'),
     width: '100%',
-    paddingVertical: 16,
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+    paddingBottom: 16,
     paddingHorizontal: 20,
 
     display: 'flex',

@@ -33,6 +33,10 @@ const PageLayoutStyles = StyleSheet.create({
   'page-lyaout__footer': {
     width: '100%',
   },
+  'page-lyaout__footer-navigation': {
+    backgroundColor: getCurrentColor('color-background-secondary'),
+    width: '100%',
+  },
 })
 
 export default PageLayoutStyles

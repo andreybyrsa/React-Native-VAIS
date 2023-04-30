@@ -42,9 +42,9 @@ function Cell({
       >
         {before}
         <View style={[CellStyle[`cell__text`], style]}>
-          { title && <Typography variant="title-3">{title}</Typography>}
-          { subtitle && <Typography variant="title-6">{subtitle}</Typography>}
-          { text && <Typography variant="text-6">{text}</Typography>}
+          {title && <Typography variant="title-3">{title}</Typography>}
+          {subtitle && <Typography variant="title-6">{subtitle}</Typography>}
+          {text && <Typography variant="text-6">{text}</Typography>}
         </View>
         {after}
       </View>

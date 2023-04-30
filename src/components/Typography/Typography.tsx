@@ -1,16 +1,11 @@
 import { ColorsStyles } from '../../../assets/styles/colors/colors'
+import useCustomFonts from '../../hooks/useCustomFonts'
 import TypographyStyles from './Typography.styles'
 import TypographyProps from './Typography.types'
-import { useFonts } from 'expo-font'
 import { Text } from 'react-native'
 
 function Typography({ style, variant = 'text-1', color, children }: TypographyProps) {
-  const [fonts] = useFonts({
-    'Montserrat-Bold': require('../../../assets/styles/fonts/Montserrat-Bold.ttf'),
-    'Montserrat-Semibold': require('../../../assets/styles/fonts/Montserrat-SemiBold.ttf'),
-    'Montserrat-Medium': require('../../../assets/styles/fonts/Montserrat-Medium.ttf'),
-    'Montserrat-Regular': require('../../../assets/styles/fonts/Montserrat-Regular.ttf'),
-  })
+  const fonts = useCustomFonts()
 
   let CurrentColor
   if (color) {
