@@ -8,6 +8,11 @@ import RouteType from '../types/RouteType'
 
 const router: RouteType[] = [
   {
+    id: 4,
+    path: '/dev',
+    component: DevPage,
+  },
+  {
     id: 0,
     path: '/on-boarding',
     component: OnBoardingPage,
@@ -26,11 +31,6 @@ const router: RouteType[] = [
     id: 3,
     path: '/',
     component: IndexPage,
-  },
-  {
-    id: 4,
-    path: '/dev',
-    component: DevPage,
   },
   {
     id: 5,
