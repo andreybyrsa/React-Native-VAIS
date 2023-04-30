@@ -2,7 +2,7 @@ import Typography from '../Typography'
 import CellStyle from './Cell.style'
 import CellProps from './Cell.types'
 import { useState } from 'react'
-import { Text, TouchableHighlight, View } from 'react-native'
+import { TouchableHighlight, View } from 'react-native'
 
 function Cell({
   style,
