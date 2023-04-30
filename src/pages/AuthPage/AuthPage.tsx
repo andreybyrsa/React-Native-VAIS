@@ -3,6 +3,7 @@ import IconComponent from '../../components/IconComponent'
 import ImageComponent from '../../components/ImageComponent'
 import PhoneField from '../../components/Input/PhoneField'
 import TextField from '../../components/Input/TextField'
+import ProfilePictureModal from '../../components/Modals/ProfilePictureModal'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
 import Header from '../../layouts/Header'
@@ -10,7 +11,7 @@ import PageLayout from '../../layouts/PageLayout'
 import { setUser } from '../../store/reducers/user/UserReducer'
 import AuthPageStyles from './AuthPage.styles'
 import { useNavigation } from '@react-navigation/native'
-import { ImagePickerAsset, MediaTypeOptions, launchImageLibraryAsync } from 'expo-image-picker'
+import { ImagePickerAsset } from 'expo-image-picker'
 import React, { useCallback, useMemo, useState } from 'react'
 import { TouchableHighlight, View } from 'react-native'
 import { useDispatch } from 'react-redux'
@@ -26,19 +27,12 @@ function AuthPage() {
 
   const [image, setImage] = useState<ImagePickerAsset>()
 
+  const [modalOpened, setModalOpened] = useState<boolean>(false)
+
   const buttonDisable = !!userName && phoneNumber !== '+7' && errorValue === 'undefined'
 
-  const openImagesLibrary = async () => {
-    let result = await launchImageLibraryAsync({
-      mediaTypes: MediaTypeOptions.Images,
-      allowsEditing: true,
-      aspect: [5, 3],
-      quality: 1,
-    })
-
-    if (!result.canceled) {
-      setImage(result.assets[0])
-    }
+  const openModal = () => {
+    setModalOpened(true)
   }
 
   const onHandlerSubmit = useCallback(() => {
@@ -78,7 +72,7 @@ function AuthPage() {
       <TouchableHighlight
         style={AuthPageStyles['auth-page__avatar-image-container']}
         underlayColor="transparent"
-        onPress={openImagesLibrary}
+        onPress={openModal}
       >
         {image ? (
           <ImageComponent
@@ -131,12 +125,14 @@ function AuthPage() {
           iconName="ios-logo-facebook"
         />
       </View>
+
+      <ProfilePictureModal
+        opened={modalOpened}
+        setOpened={setModalOpened}
+        setImage={setImage}
+      />
     </PageLayout>
   )
 }
 
 export default AuthPage
-
-function dispatch(arg0: any) {
-  throw new Error('Function not implemented.')
-}
