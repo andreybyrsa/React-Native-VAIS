@@ -1,6 +1,6 @@
 import getCurrentColor from '../../utils/getCurrentColor'
-import IconComponentProps from './IconComponent.types'
 import IconComponentStyles from './IconComponent.styles'
+import IconComponentProps from './IconComponent.types'
 import React from 'react'
 import Icon from 'react-native-vector-icons/Ionicons'
 
@@ -12,7 +12,7 @@ function IconComponent({
 }: IconComponentProps) {
   return (
     <Icon
-      style = {[IconComponentStyles['iconComponent'], iconStyle]}
+      style={[IconComponentStyles['icon-component'], iconStyle]}
       name={iconName}
       size={size}
       color={getCurrentColor(`${color}`)}

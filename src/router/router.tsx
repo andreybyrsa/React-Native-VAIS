@@ -1,27 +1,39 @@
+import AuthPage from '../pages/AuthPage'
 import DevPage from '../pages/DevPage'
 import IndexPage from '../pages/IndexPage'
 import OnBoardingPage from '../pages/OnBoardingPage'
+import PhoneConfirmPage from '../pages/PhoneConfirmPage'
 import ProfilePage from '../pages/ProfilePage'
 import RouteType from '../types/RouteType'
 
 const router: RouteType[] = [
   {
     id: 0,
-    path: '/dev',
-    component: DevPage,
-  },
-  {
-    id: 1,
     path: '/on-boarding',
     component: OnBoardingPage,
   },
   {
+    id: 1,
+    path: '/auth',
+    component: AuthPage,
+  },
+  {
     id: 2,
+    path: '/phone-confirm',
+    component: PhoneConfirmPage,
+  },
+  {
+    id: 3,
     path: '/',
     component: IndexPage,
   },
   {
-    id: 3,
+    id: 4,
+    path: '/dev',
+    component: DevPage,
+  },
+  {
+    id: 5,
     path: '/profile',
     component: ProfilePage,
   },
