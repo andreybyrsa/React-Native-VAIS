@@ -1,5 +1,7 @@
 import { gear, logo } from '../../../assets/images'
+import { jacket } from '../../../assets/images'
 import Button from '../../components/Button'
+import Card from '../../components/Cards/Card'
 import Cell from '../../components/Cell'
 import IconButton from '../../components/IconButton'
 import IconComponent from '../../components/IconComponent'
@@ -16,6 +18,10 @@ import PageType from '../../types/PageType'
 import DevPageStyles from './DevPage.styles'
 import React, { useMemo, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
+
+const cards = [
+  { id: 1, name: 'Классический образ', src: [jacket, jacket, jacket, jacket, jacket, jacket], date: Date.now().toString() },
+]
 
 function DevPage({ navigation }: PageType) {
   const [error, setError] = useState<string>('')
@@ -42,9 +48,22 @@ function DevPage({ navigation }: PageType) {
   }, [])
 
   return (
-    <View>
-      <LookLoader />
-    </View>
+    <PageLayout
+      style={[DevPageStyles['dev-page__content']]}
+      header={header}
+      footer={footer}
+    >
+      <View style={[DevPageStyles['dev-page__cards']]}>
+        {cards.map((elem) => (
+          <Card
+            key={elem.id}
+            cardName={elem.name}
+            imageSrces={elem.src}
+            date={elem.date}
+          />
+        ))}
+      </View>
+    </PageLayout>
   )
 }
 
