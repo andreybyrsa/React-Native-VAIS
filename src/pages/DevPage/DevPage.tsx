@@ -2,6 +2,7 @@ import { gear, logo } from '../../../assets/images'
 import { jacket } from '../../../assets/images'
 import Button from '../../components/Button'
 import Card from '../../components/Cards/Card'
+import HorizontalCard from '../../components/Cards/HorizontalCard'
 import Cell from '../../components/Cell'
 import IconButton from '../../components/IconButton'
 import IconComponent from '../../components/IconComponent'
@@ -20,7 +21,8 @@ import React, { useMemo, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 
 const cards = [
-  { id: 1, name: 'Классический образ', src: [jacket, jacket, jacket, jacket, jacket, jacket], date: Date.now().toString() },
+  { id: 0, src: jacket },
+  // { id: 1, src: jacket },
 ]
 
 function DevPage({ navigation }: PageType) {
@@ -49,20 +51,21 @@ function DevPage({ navigation }: PageType) {
 
   return (
     <PageLayout
-      style={[DevPageStyles['dev-page__content']]}
       header={header}
       footer={footer}
     >
-      <View style={[DevPageStyles['dev-page__cards']]}>
-        {cards.map((elem) => (
-          <Card
-            key={elem.id}
-            cardName={elem.name}
-            imageSrces={elem.src}
-            date={elem.date}
-          />
-        ))}
-      </View>
+      {cards.map((elem) => (
+        <HorizontalCard
+          type='primary'
+          key={elem.id}
+          imageSrc={elem.src}
+          cardInfo={{
+            clothesName: 'Пиджак классический',
+            clothesColor: 'Черный',
+            clothesGender: 'Мужской',
+          }}
+        />
+      ))}
     </PageLayout>
   )
 }

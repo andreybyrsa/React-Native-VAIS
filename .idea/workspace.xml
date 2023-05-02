@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f4dbba9-bc59-42a6-9cdc-62e0ea241150" name="Changes" comment="">
+    <list default="true" id="3f4dbba9-bc59-42a6-9cdc-62e0ea241150" name="Changes" comment="Исправил Ошибку с компонентом Cell. Убрал пропс type">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/setApiProfilePic.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cards/Card/Card.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cards/Card/Card.styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cards/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cards/Card/Card.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/DevPage/DevPage.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DevPage/DevPage.styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/DevPage/DevPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DevPage/DevPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
