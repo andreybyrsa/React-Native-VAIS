@@ -25,7 +25,6 @@ function* setUserWorker() {
   yield put(
     setUser({
       ...apiUser,
-      profilePic: apiProfilePic
     }),
   )
 }

@@ -1,18 +1,22 @@
-import Button from '../../components/Button'
-import Cell from '../../components/Cell'
-import IconComponent from '../../components/IconComponent'
-import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
-import Typography from '../../components/Typography'
-import Footer from '../../layouts/Footer'
-import Header from '../../layouts/Header'
-import PageLayout from '../../layouts/PageLayout'
-import UserSelector from '../../store/reducers/user/UserSelector'
-import CellContentType from '../../types/CellContentType'
-import getPhoneMaskPattern from '../../utils/getPhoneMaskPattern'
-import ProfilePageStyle from './ProfilePage.styles'
-import { useMemo } from 'react'
+import Button from '../../components/Button';
+import Cell from '../../components/Cell';
+import IconComponent from '../../components/IconComponent';
+import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar';
+import Typography from '../../components/Typography';
+import Footer from '../../layouts/Footer';
+import Header from '../../layouts/Header';
+import PageLayout from '../../layouts/PageLayout';
+import { removeUser } from '../../store/reducers/user/UserReducer';
+import UserSelector from '../../store/reducers/user/UserSelector';
+import CellContentType from '../../types/CellContentType';
+import getPhoneMaskPattern from '../../utils/getPhoneMaskPattern';
+import ProfilePageStyle from './ProfilePage.styles';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
+import { useMemo } from 'react';
 import { Image, View } from 'react-native'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+
 
 const Cells: CellContentType[] = [
   {
@@ -31,6 +35,20 @@ const Cells: CellContentType[] = [
 
 function ProfilePage() {
   const user = useSelector(UserSelector())
+  const navigation = useNavigation()
+
+  const dispatch = useDispatch()
+
+  const logOutFromAccount = async () => {
+    dispatch(removeUser())
+    await AsyncStorage.removeItem('@user')
+
+    navigation.reset({
+      key: '0',
+      index: 0,
+      routes: [{ name: '/on-boarding' as never }],
+    })
+  }
 
   const header = useMemo(() => {
     return <Header leftSideSlot={<Typography variant="title-1">Профиль</Typography>} />
@@ -86,6 +104,16 @@ function ProfilePage() {
         />
       ))}
       <Button type="primary">Перейти на премиум</Button>
+      <Cell
+        title="Выйти"
+        after={
+          <IconComponent
+            iconName="md-chevron-forward"
+            size={35}
+          />
+        }
+        onClick={logOutFromAccount}
+      />
     </PageLayout>
   )
 }

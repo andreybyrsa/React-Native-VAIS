@@ -1,11 +1,10 @@
-import AuthPage from '../pages/AuthPage';
-import DevPage from '../pages/DevPage';
-import IndexPage from '../pages/IndexPage';
-import OnBoardingPage from '../pages/OnBoardingPage';
-import PhoneConfirmPage from '../pages/PhoneConfirmPage';
-import ProfilePage from '../pages/ProfilePage';
-import RouteType from '../types/RouteType';
-
+import AuthPage from '../pages/AuthPage'
+import DevPage from '../pages/DevPage'
+import IndexPage from '../pages/IndexPage'
+import OnBoardingPage from '../pages/OnBoardingPage'
+import PhoneConfirmPage from '../pages/PhoneConfirmPage'
+import ProfilePage from '../pages/ProfilePage'
+import RouteType from '../types/RouteType'
 
 const router: RouteType[] = [
   {
