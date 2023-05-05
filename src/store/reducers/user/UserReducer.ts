@@ -9,6 +9,9 @@ const userSlice = createSlice({
     setUser(state, action: PayloadAction<User>) {
       state.user = action.payload
     },
+    setUserByLocaleStorage(state, action: PayloadAction<User>) {
+      state.user = action.payload
+    },
     setUserToken(state, action: PayloadAction<string>) {
       if (state.user) {
         state.user.id = action.payload
@@ -25,6 +28,7 @@ const userSlice = createSlice({
   },
 })
 
-export const { setUser, setUserToken, setVerifyCode, removeUser } = userSlice.actions
+export const { setUser, setUserByLocaleStorage, setUserToken, setVerifyCode, removeUser } =
+  userSlice.actions
 
 export default userSlice.reducer
