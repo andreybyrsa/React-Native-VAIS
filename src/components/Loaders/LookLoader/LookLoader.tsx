@@ -12,7 +12,6 @@ import {
   Easing,
   ImageBackground,
   ImageSourcePropType,
-  StyleSheet,
   View,
 } from 'react-native'
 
@@ -35,13 +34,13 @@ const LookLoader = () => {
       Animated.sequence([
         Animated.timing(backgroundAnim, {
           toValue: 1,
-          duration: 3000,
+          duration: 2500,
           easing: Easing.ease,
           useNativeDriver: true,
         }),
         Animated.timing(backgroundAnim, {
           toValue: 0,
-          duration: 3000,
+          duration: 2500,
           easing: Easing.ease,
           useNativeDriver: true,
         }),
@@ -84,7 +83,7 @@ const LookLoader = () => {
         }}
       >
         <ImageComponent
-          style={{ width: 200, height: 200 }}
+          style={{ width: 150, height: 150 }}
           imageSrc={gear}
           alt="logo"
         />
