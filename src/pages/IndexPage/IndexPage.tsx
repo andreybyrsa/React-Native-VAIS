@@ -1,14 +1,13 @@
-import IconComponent from '../../components/IconComponent';
-import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar';
-import Typography from '../../components/Typography';
-import Footer from '../../layouts/Footer';
-import Header from '../../layouts/Header';
-import PageLayout from '../../layouts/PageLayout';
-import UserSelector from '../../store/reducers/user/UserSelector';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import React, { useEffect, useMemo } from 'react';
-import { useSelector } from 'react-redux';
-
+import IconComponent from '../../components/IconComponent'
+import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
+import Typography from '../../components/Typography'
+import Footer from '../../layouts/Footer'
+import Header from '../../layouts/Header'
+import PageLayout from '../../layouts/PageLayout'
+import UserSelector from '../../store/reducers/user/UserSelector'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import React, { useEffect, useMemo } from 'react'
+import { useSelector } from 'react-redux'
 
 function IndexPage() {
   const user = useSelector(UserSelector())

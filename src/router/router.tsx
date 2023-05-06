@@ -4,6 +4,7 @@ import IndexPage from '../pages/IndexPage'
 import OnBoardingPage from '../pages/OnBoardingPage'
 import PhoneConfirmPage from '../pages/PhoneConfirmPage'
 import ProfilePage from '../pages/ProfilePage'
+import UploadLookPage from '../pages/UploadLookPage'
 import RouteType from '../types/RouteType'
 
 const router: RouteType[] = [
@@ -29,11 +30,16 @@ const router: RouteType[] = [
   },
   {
     id: 4,
+    path: '/upload-look',
+    component: UploadLookPage,
+  },
+  {
+    id: 5,
     path: '/profile',
     component: ProfilePage,
   },
   {
-    id: 5,
+    id: 6,
     path: '/dev',
     component: DevPage,
   },
