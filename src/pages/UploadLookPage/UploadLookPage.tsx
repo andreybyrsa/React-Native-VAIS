@@ -1,15 +1,14 @@
-import { lookLoaderBackground__active } from '../../../assets/images';
-import Button from '../../components/Button';
-import LookLoader from '../../components/Loaders/LookLoader';
-import ProfilePictureModal from '../../components/Modals/ProfilePictureModal';
-import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar';
-import Footer from '../../layouts/Footer';
-import PageLayout from '../../layouts/PageLayout';
-import UploadLookPageStyles from './UploadLookPage.styles';
-import { ImagePickerAsset } from 'expo-image-picker';
-import { useMemo, useState } from 'react';
-import { Image, ImageBackground, ImageSourcePropType } from 'react-native';
-
+import { lookLoaderBackground__active } from '../../../assets/images'
+import Button from '../../components/Button'
+import LookLoader from '../../components/Loaders/LookLoader'
+import ProfilePictureModal from '../../components/Modals/ProfilePictureModal'
+import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
+import Footer from '../../layouts/Footer'
+import PageLayout from '../../layouts/PageLayout'
+import UploadLookPageStyles from './UploadLookPage.styles'
+import { ImagePickerAsset } from 'expo-image-picker'
+import { useMemo, useState } from 'react'
+import { Image, ImageBackground, ImageSourcePropType } from 'react-native'
 
 function UploadLookPage() {
   const [modalOpened, setModalOpened] = useState<boolean>(false)
