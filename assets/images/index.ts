@@ -1,5 +1,4 @@
 import gear from './gear.png'
-import jacket from './jacket.png'
 import logo from './logo.png'
 import lookLoaderBackground__active from './lookLoaderBackground__active.png'
 import lookLoaderBackground__enabled from './lookLoaderBackground__enabled.png'
@@ -10,7 +9,6 @@ import onBoarding4 from './onBoarding4.png'
 import onBoardingContent from './onBoardingContent.png'
 
 export {
-  jacket,
   onBoardingContent,
   logo,
   lookLoaderBackground__active,
