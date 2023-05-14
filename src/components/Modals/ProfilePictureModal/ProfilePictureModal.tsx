@@ -1,6 +1,7 @@
 import Footer from '../../../layouts/Footer'
 import PageLayout from '../../../layouts/PageLayout'
 import Button from '../../Button'
+import DefaultModal from '../DefaultModal'
 import ProfilePictureModalProps from './ProfilePictureModal.types'
 import ProfilePictureModalStyles from './ProfilePrictureModal.styles'
 import {
@@ -10,7 +11,7 @@ import {
   requestCameraPermissionsAsync,
 } from 'expo-image-picker'
 import { useMemo } from 'react'
-import { Modal, TouchableHighlight, View } from 'react-native'
+import { View } from 'react-native'
 
 function ProfilePictureModal({ opened, setOpened, setImage }: ProfilePictureModalProps) {
   const openImagesLibrary = async () => {
@@ -47,10 +48,6 @@ function ProfilePictureModal({ opened, setOpened, setImage }: ProfilePictureModa
     }
   }
 
-  const closeModal = () => {
-    setOpened(false)
-  }
-
   const footer = useMemo(() => {
     return (
       <Footer style={ProfilePictureModalStyles['profile-picture-modal__buttons-wrapper']}>
@@ -63,23 +60,17 @@ function ProfilePictureModal({ opened, setOpened, setImage }: ProfilePictureModa
   }, [])
 
   return (
-    <Modal
+    <DefaultModal
+      opened={opened}
+      setOpened={setOpened}
       animationType="slide"
-      transparent={true}
-      visible={opened}
     >
-      <TouchableHighlight
-        style={ProfilePictureModalStyles['profile-picture-modal__blur-content']}
-        underlayColor="transparent"
-        onPress={closeModal}
-      >
-        <PageLayout
-          style={ProfilePictureModalStyles['profile-picture-modal']}
-          footerStyle={ProfilePictureModalStyles['profile-picture-modal__footer']}
-          footer={footer}
-        />
-      </TouchableHighlight>
-    </Modal>
+      <PageLayout
+        style={ProfilePictureModalStyles['profile-picture-modal']}
+        footerStyle={ProfilePictureModalStyles['profile-picture-modal__footer']}
+        footer={footer}
+      />
+    </DefaultModal>
   )
 }
 

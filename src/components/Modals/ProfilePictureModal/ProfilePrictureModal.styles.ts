@@ -5,9 +5,6 @@ const ProfilePictureModalStyles = StyleSheet.create({
   'profile-picture-modal': {
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
   },
-  'profile-picture-modal__blur-content': {
-    flex: 1,
-  },
   'profile-picture-modal__footer': {
     backgroundColor: getCurrentColor('color-background-primary'),
     borderTopLeftRadius: 10,

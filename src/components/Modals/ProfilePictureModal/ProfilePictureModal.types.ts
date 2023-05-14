@@ -1,10 +1,8 @@
+import Modal from '../../../types/Modal.types'
 import { ImagePickerAsset } from 'expo-image-picker'
 import React, { SetStateAction } from 'react'
 
-interface ProfilePictureModalProps {
-  opened: boolean
-  setOpened: React.Dispatch<SetStateAction<boolean>>
-
+interface ProfilePictureModalProps extends Modal {
   setImage: React.Dispatch<SetStateAction<ImagePickerAsset | undefined>>
 }
 
