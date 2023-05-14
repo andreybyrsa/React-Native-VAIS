@@ -5,7 +5,7 @@ const PhoneConfirmPageStyles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    gap: 8
+    gap: 8,
   },
 })
 
