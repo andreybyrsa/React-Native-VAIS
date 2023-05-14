@@ -1,39 +1,42 @@
-import Button from '../../components/Button';
-import Cell from '../../components/Cell';
-import IconComponent from '../../components/IconComponent';
-import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar';
-import Typography from '../../components/Typography';
-import Footer from '../../layouts/Footer';
-import Header from '../../layouts/Header';
-import PageLayout from '../../layouts/PageLayout';
-import { removeUser } from '../../store/reducers/user/UserReducer';
-import UserSelector from '../../store/reducers/user/UserSelector';
-import CellContentType from '../../types/CellContentType';
-import getPhoneMaskPattern from '../../utils/getPhoneMaskPattern';
-import ProfilePageStyle from './ProfilePage.styles';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useNavigation } from '@react-navigation/native';
-import { useMemo } from 'react';
+import Button from '../../components/Button'
+import Cell from '../../components/Cell'
+import IconComponent from '../../components/IconComponent'
+import AppRatingModal from '../../components/Modals/AppRatingModal'
+import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
+import Typography from '../../components/Typography'
+import Footer from '../../layouts/Footer'
+import Header from '../../layouts/Header'
+import PageLayout from '../../layouts/PageLayout'
+import { removeUser } from '../../store/reducers/user/UserReducer'
+import UserSelector from '../../store/reducers/user/UserSelector'
+import CellContentType from '../../types/CellContentType'
+import getPhoneMaskPattern from '../../utils/getPhoneMaskPattern'
+import ProfilePageStyle from './ProfilePage.styles'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { useNavigation } from '@react-navigation/native'
+import { useMemo, useState } from 'react'
 import { Image, View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 
-
-const Cells: CellContentType[] = [
-  {
-    id: 0,
-    title: 'Избранное',
-  },
-  {
-    id: 1,
-    title: 'Оценить приложение',
-  },
-  {
-    id: 2,
-    title: 'Связаться с нами',
-  },
-]
-
 function ProfilePage() {
+  const [ratingOpened, setRatingOpened] = useState<boolean>(false)
+
+  const Cells: CellContentType[] = [
+    {
+      id: 0,
+      title: 'Избранное',
+    },
+    {
+      id: 1,
+      title: 'Оценить приложение',
+      onClick: openRatingModal,
+    },
+    {
+      id: 2,
+      title: 'Связаться с нами',
+    },
+  ]
+
   const user = useSelector(UserSelector())
   const navigation = useNavigation()
 
@@ -48,6 +51,10 @@ function ProfilePage() {
       index: 0,
       routes: [{ name: '/on-boarding' as never }],
     })
+  }
+
+  function openRatingModal() {
+    setRatingOpened(true)
   }
 
   const header = useMemo(() => {
@@ -101,6 +108,7 @@ function ProfilePage() {
               size={35}
             />
           }
+          onClick={elem.onClick}
         />
       ))}
       <Button type="primary">Перейти на премиум</Button>
@@ -113,6 +121,11 @@ function ProfilePage() {
           />
         }
         onClick={logOutFromAccount}
+      />
+
+      <AppRatingModal
+        opened={ratingOpened}
+        setOpened={setRatingOpened}
       />
     </PageLayout>
   )

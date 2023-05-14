@@ -1,10 +1,7 @@
-import React, { SetStateAction } from 'react';
+import ModalTypes from '../../../types/ModalTypes'
+import React from 'react'
 
-
-interface DefaultModalProps {
-  opened: boolean
-  setOpened: React.Dispatch<SetStateAction<boolean>>
-
+interface DefaultModalProps extends ModalTypes {
   children: React.ReactNode
 
   animationType?: 'slide' | 'fade'
