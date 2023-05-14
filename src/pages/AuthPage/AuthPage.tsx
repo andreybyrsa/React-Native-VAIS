@@ -17,6 +17,7 @@ import { useDispatch } from 'react-redux'
 
 function AuthPage() {
   const navigation = useNavigation()
+
   const dispatch = useDispatch()
 
   const [userName, setUserName] = useState<string>('')
@@ -24,6 +25,8 @@ function AuthPage() {
   const [errorValue, setErrorValue] = useState<string>('')
 
   const [image, setImage] = useState<ImagePickerAsset>()
+
+  const buttonDisable = !!userName && phoneNumber !== '+7' && errorValue === 'undefined'
 
   const openImagesLibrary = async () => {
     let result = await launchImageLibraryAsync({
@@ -43,13 +46,11 @@ function AuthPage() {
       setUser({
         userName,
         phoneNumber,
-        profilePic: image,
+        profilePic: image?.uri,
       }),
     )
     return navigation.navigate('/phone-confirm' as never)
   }, [userName, phoneNumber, image])
-
-  const buttonDisable = !!userName && phoneNumber !== '+7' && errorValue === 'undefined'
 
   const header = useMemo(() => {
     return <Header leftSideSlot={<Typography variant="title-1">Авторизация</Typography>} />

@@ -1,17 +1,17 @@
 import Button from '../../components/Button'
 import NumberField from '../../components/Input/NumberField'
+import UserLoader from '../../components/Loaders/UserLoader'
 import Typography from '../../components/Typography'
 import { User } from '../../domain/User'
 import useAuth from '../../hooks/useAuth'
 import Footer from '../../layouts/Footer'
 import Header from '../../layouts/Header'
 import PageLayout from '../../layouts/PageLayout'
-import { setUser, setUserToken } from '../../store/reducers/user/UserReducer'
+import { setUser, setVerifyCode } from '../../store/reducers/user/UserReducer'
 import UserSelector from '../../store/reducers/user/UserSelector'
 import getCurrentTimer from '../../utils/getCurrentTimer'
 import getPhoneMaskPattern from '../../utils/getPhoneMaskPattern'
 import PhoneConfirmPageStyles from './PhoneConfirmPage.styles'
-import { useNavigation } from '@react-navigation/native'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { TouchableHighlight } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
@@ -19,35 +19,33 @@ import { useDispatch, useSelector } from 'react-redux'
 let defaultTime = 240
 
 function PhoneConfirmPage() {
-  const navigation = useNavigation()
   const dispatch = useDispatch()
 
   const [time, setTime] = useState<number>(defaultTime)
-  const [isCounting, setIsCounting] = useState<boolean>(true)
 
-  const [verifyCode, setVerifyCode] = useState<string>('')
+  const [code, setCode] = useState<string>('')
   const [errorValue, setErrorValue] = useState<string>('')
 
   const user = useSelector(UserSelector()) as User
   const isAuth = useAuth()
 
-  const buttonDisabled = !!verifyCode && errorValue === 'undefined'
+  const buttonDisabled = !!code && errorValue === 'undefined'
 
   useEffect(() => {
-    if (isCounting) {
+    if (!isAuth) {
       setTimeout(() => {
         setTime((prevState) => (prevState > 0 ? prevState - 1 : 0))
       }, 1000)
     }
-  }, [time, isCounting])
+  }, [time, isAuth])
 
   const onHandlerSubmit = useCallback(() => {
-    setIsCounting(false)
-    dispatch(setUserToken(verifyCode))
-  }, [verifyCode, isCounting])
+    dispatch(setVerifyCode(code))
+  }, [code])
 
   const resendCode = () => {
     setTime(defaultTime)
+    dispatch(setUser(user))
   }
 
   const header = useMemo(() => {
@@ -67,8 +65,8 @@ function PhoneConfirmPage() {
     )
   }, [errorValue, onHandlerSubmit])
 
-  if (isAuth && isCounting === false) {
-    return navigation.navigate('/' as never)
+  if (isAuth) {
+    return <UserLoader />
   }
 
   return (
@@ -89,7 +87,7 @@ function PhoneConfirmPage() {
         }
       </Typography>
       <NumberField
-        setValue={setVerifyCode}
+        setValue={setCode}
         setError={setErrorValue}
         required
       />
