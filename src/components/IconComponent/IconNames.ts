@@ -17,3 +17,4 @@ export type IconNames =
   | 'md-trash-bin-outline'
   | 'md-chevron-forward'
   | 'star'
+  | 'ios-return-up-back'

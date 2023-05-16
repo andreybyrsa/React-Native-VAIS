@@ -27,6 +27,7 @@ function ProfilePage() {
     {
       id: 0,
       title: 'Избранное',
+      onClick: navigateToFavourites,
     },
     {
       id: 1,
@@ -62,6 +63,10 @@ function ProfilePage() {
 
   function openConnectModal() {
     setConnectOpened(true)
+  }
+
+  function navigateToFavourites() {
+    return navigation.navigate('/favourites' as never)
   }
 
   const header = useMemo(() => {

@@ -6,11 +6,15 @@ import Header from '../../layouts/Header'
 import PageLayout from '../../layouts/PageLayout'
 import UserSelector from '../../store/reducers/user/UserSelector'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { useNavigation } from '@react-navigation/native'
 import React, { useEffect, useMemo } from 'react'
+import { TouchableHighlight } from 'react-native'
 import { useSelector } from 'react-redux'
 
 function IndexPage() {
   const user = useSelector(UserSelector())
+
+  const navigation = useNavigation()
 
   useEffect(() => {
     ;(async () => {
@@ -29,15 +33,25 @@ function IndexPage() {
     })()
   }, [])
 
+  const navigateToFavourites = () => {
+    navigation.navigate('/favourites' as never)
+  }
+
   const header = useMemo(() => {
     return (
       <Header
         leftSideSlot={<Typography variant="title-1">Главная</Typography>}
         rightSideSlot={
-          <IconComponent
-            iconName="ios-heart-outline"
-            size={45}
-          />
+          <TouchableHighlight
+            underlayColor="transparent"
+            activeOpacity={1}
+            onPress={navigateToFavourites}
+          >
+            <IconComponent
+              iconName="ios-heart-outline"
+              size={45}
+            />
+          </TouchableHighlight>
         }
       />
     )

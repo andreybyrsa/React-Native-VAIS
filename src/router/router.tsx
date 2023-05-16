@@ -1,5 +1,6 @@
 import AuthPage from '../pages/AuthPage'
 import DevPage from '../pages/DevPage'
+import FavouritesLooksPage from '../pages/FavouritesLooksPage'
 import IndexPage from '../pages/IndexPage'
 import OnBoardingPage from '../pages/OnBoardingPage'
 import PhoneConfirmPage from '../pages/PhoneConfirmPage'
@@ -40,6 +41,11 @@ const router: RouteType[] = [
   },
   {
     id: 6,
+    path: '/favourites',
+    component: FavouritesLooksPage,
+  },
+  {
+    id: 7,
     path: '/dev',
     component: DevPage,
   },
