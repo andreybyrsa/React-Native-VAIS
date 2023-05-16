@@ -6,7 +6,7 @@ interface AppInitialState {
 
 const initialState: AppInitialState = {
   app: {
-    rating: undefined
+    rating: undefined,
   },
 }
 
