@@ -12,12 +12,12 @@ function AppRatingModal({ opened, setOpened }: AppRatingModalProps) {
   const [rating, setRating] = useState<number>(0)
 
   const getCurrentRating = (elemIndex: number) => {
-    setRating(elemIndex + 1)
+    setRating(elemIndex)
     setTimeout(() => setOpened(false), 500)
   }
 
   const getCurrentStarColor = (elemIndex: number): ColorsType => {
-    return elemIndex + 1 <= rating ? 'color-background-secondary' : 'color-background-light'
+    return elemIndex <= rating ? 'color-background-secondary' : 'color-background-light'
   }
 
   return (
@@ -30,17 +30,17 @@ function AppRatingModal({ opened, setOpened }: AppRatingModalProps) {
         <View style={AppRatingModalStyles['app-rating-modal__cell']}>
           <Typography variant="title-3">{'Ваше стильное мнение :)'}</Typography>
           <View style={AppRatingModalStyles['app-rating-modal__stars-wrapper']}>
-            {[...Array(5)].map((elem, index) => (
+            {[...Array(1, 2, 3, 4, 5)].map((elemIndex) => (
               <TouchableHighlight
+                key={elemIndex}
                 underlayColor="transparent"
                 activeOpacity={1}
-                onPress={() => getCurrentRating(index)}
+                onPress={() => getCurrentRating(elemIndex)}
               >
                 <IconComponent
-                  key={`star-${index}`}
                   iconName="star"
                   size={35}
-                  color={getCurrentStarColor(index)}
+                  color={getCurrentStarColor(elemIndex)}
                 />
               </TouchableHighlight>
             ))}
