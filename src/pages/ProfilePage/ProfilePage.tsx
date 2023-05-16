@@ -2,6 +2,7 @@ import Button from '../../components/Button'
 import Cell from '../../components/Cell'
 import IconComponent from '../../components/IconComponent'
 import AppRatingModal from '../../components/Modals/AppRatingModal'
+import ConnectUsModal from '../../components/Modals/ConnectUsModal'
 import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
@@ -20,6 +21,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 function ProfilePage() {
   const [ratingOpened, setRatingOpened] = useState<boolean>(false)
+  const [connectOpened, setConnectOpened] = useState<boolean>(false)
 
   const Cells: CellContentType[] = [
     {
@@ -34,6 +36,7 @@ function ProfilePage() {
     {
       id: 2,
       title: 'Связаться с нами',
+      onClick: openConnectModal,
     },
   ]
 
@@ -55,6 +58,10 @@ function ProfilePage() {
 
   function openRatingModal() {
     setRatingOpened(true)
+  }
+
+  function openConnectModal() {
+    setConnectOpened(true)
   }
 
   const header = useMemo(() => {
@@ -126,6 +133,11 @@ function ProfilePage() {
       <AppRatingModal
         opened={ratingOpened}
         setOpened={setRatingOpened}
+      />
+
+      <ConnectUsModal
+        opened={connectOpened}
+        setOpened={setConnectOpened}
       />
     </PageLayout>
   )
