@@ -18,3 +18,4 @@ export type IconNames =
   | 'md-chevron-forward'
   | 'star'
   | 'ios-return-up-back'
+  | 'cog'

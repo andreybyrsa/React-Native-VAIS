@@ -20,7 +20,7 @@ const navLinks: NavLinkType[] = [
   {
     id: 2,
     iconName: 'shirt-outline',
-    to: '/looks-page',
+    to: '/looks',
     navigationName: 'Одежда',
   },
   {
