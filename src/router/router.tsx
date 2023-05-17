@@ -2,6 +2,7 @@ import AuthPage from '../pages/AuthPage'
 import DevPage from '../pages/DevPage'
 import FavouritesLooksPage from '../pages/FavouritesLooksPage'
 import IndexPage from '../pages/IndexPage'
+import LooksPage from '../pages/LooksPage'
 import OnBoardingPage from '../pages/OnBoardingPage'
 import PhoneConfirmPage from '../pages/PhoneConfirmPage'
 import ProfilePage from '../pages/ProfilePage'
@@ -36,16 +37,21 @@ const router: RouteType[] = [
   },
   {
     id: 5,
+    path: '/looks',
+    component: LooksPage,
+  },
+  {
+    id: 6,
     path: '/profile',
     component: ProfilePage,
   },
   {
-    id: 6,
+    id: 7,
     path: '/favourites',
     component: FavouritesLooksPage,
   },
   {
-    id: 7,
+    id: 8,
     path: '/dev',
     component: DevPage,
   },
