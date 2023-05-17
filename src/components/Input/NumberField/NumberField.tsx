@@ -1,8 +1,6 @@
 import useCustomFonts from '../../../hooks/useCustomFonts'
 import { FormsTypes } from '../../../types/FormsTypes'
 import getCurrentColor from '../../../utils/getCurrentColor'
-import getCurrentValidationIcon from '../../../utils/getCurrentValidationIcon'
-import IconComponent from '../../IconComponent'
 import Typography from '../../Typography'
 import NumberFielsStyles from './NumberField.styles'
 import NumberFieldProps from './NumberField.types'
@@ -65,32 +63,32 @@ function NumberField({
           {label}
         </Typography>
       )}
-        <Controller
-          control={control}
-          rules={{
-            required,
-            pattern: /^[0-9]+$/,
-            minLength,
-            maxLength,
-          }}
-          render={({ field: { onChange } }) => (
-            <TextInput
-              style={[
-                NumberFielsStyles['number-filed'],
-                NumberFielsStyles[`number-field--${type}`],
-                isRequired && NumberFielsStyles['number-field--required'],
-                style,
-              ]}
-              selectionColor={getCurrentColor('color-text-primary')}
-              placeholderTextColor={CurrentPlaceholderColor}
-              placeholder={placeholder}
-              keyboardType="phone-pad"
-              onChange={onHandlerChange}
-              onChangeText={onChange}
-            />
-          )}
-          name="numberField"
-        />
+      <Controller
+        control={control}
+        rules={{
+          required,
+          pattern: /^[0-9]+$/,
+          minLength,
+          maxLength,
+        }}
+        render={({ field: { onChange } }) => (
+          <TextInput
+            style={[
+              NumberFielsStyles['number-filed'],
+              NumberFielsStyles[`number-field--${type}`],
+              isRequired && NumberFielsStyles['number-field--required'],
+              style,
+            ]}
+            selectionColor={getCurrentColor('color-text-primary')}
+            placeholderTextColor={CurrentPlaceholderColor}
+            placeholder={placeholder}
+            keyboardType="phone-pad"
+            onChange={onHandlerChange}
+            onChangeText={onChange}
+          />
+        )}
+        name="numberField"
+      />
     </View>
   )
 }
