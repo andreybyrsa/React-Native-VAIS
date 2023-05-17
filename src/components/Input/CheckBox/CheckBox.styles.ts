@@ -1,6 +1,5 @@
-import getCurrentColor from '../../../utils/getCurrentColor';
-import { StyleSheet } from 'react-native';
-
+import getCurrentColor from '../../../utils/getCurrentColor'
+import { StyleSheet } from 'react-native'
 
 const CheckBoxStyles = StyleSheet.create({
   'check-box': {
