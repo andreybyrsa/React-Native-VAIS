@@ -1,17 +1,24 @@
 import FilterButton from '../../components/FilterButton'
+import FilterModal from '../../components/Modals/FilterModal'
 import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
 import Header from '../../layouts/Header'
 import PageLayout from '../../layouts/PageLayout'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
 function LooksPage() {
+  const [modalOpened, setModalOpened] = useState<boolean>(false)
+
+  const openFilterModal = () => {
+    setModalOpened(true)
+  }
+
   const header = useMemo(() => {
     return (
       <Header
         leftSideSlot={<Typography variant="title-1">Образы</Typography>}
-        rightSideSlot={<FilterButton />}
+        rightSideSlot={<FilterButton onPress={openFilterModal} />}
       />
     )
   }, [])
@@ -29,7 +36,12 @@ function LooksPage() {
       header={header}
       footer={footer}
       footerIsNavigation
-    ></PageLayout>
+    >
+      <FilterModal
+        opened={modalOpened}
+        setOpened={setModalOpened}
+      />
+    </PageLayout>
   )
 }
 
