@@ -11,6 +11,7 @@ import NumberField from '../../components/Input/NumberField'
 import PhoneField from '../../components/Input/PhoneField'
 import TextField from '../../components/Input/TextField'
 import LookLoader from '../../components/Loaders/LookLoader'
+import SubcriptionModal from '../../components/Modals/SubscriptionModal'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
 import Header from '../../layouts/Header'
@@ -19,11 +20,6 @@ import PageType from '../../types/PageType'
 import DevPageStyles from './DevPage.styles'
 import React, { useMemo, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
-
-const cards = [
-  { id: 0, src: jacket },
-  // { id: 1, src: jacket },
-]
 
 function DevPage({ navigation }: PageType) {
   const [error, setError] = useState<string>('')
@@ -49,23 +45,21 @@ function DevPage({ navigation }: PageType) {
     )
   }, [])
 
+  const [subcriptionOpen, setSubcriptionOpen] = useState<boolean>(true)
+  const openModal = () => {
+    setSubcriptionOpen(true)
+  }
+
   return (
     <PageLayout
       header={header}
       footer={footer}
     >
-      {cards.map((elem) => (
-        <HorizontalCard
-          type='primary'
-          key={elem.id}
-          imageSrc={elem.src}
-          cardInfo={{
-            clothesName: 'Пиджак классический',
-            clothesColor: 'Черный',
-            clothesGender: 'Мужской',
-          }}
-        />
-      ))}
+      <Button onClick={openModal}>Открыть модалку</Button>
+      <SubcriptionModal
+        opened={subcriptionOpen}
+        setOpened={setSubcriptionOpen}
+      />
     </PageLayout>
   )
 }

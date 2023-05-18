@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="3f4dbba9-bc59-42a6-9cdc-62e0ea241150" name="Changes" comment="Исправил Ошибку с компонентом Cell. Убрал пропс type">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/DevPage/DevPage.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DevPage/DevPage.styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cell/Cell.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cell/Cell.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IconComponent/IconComponent.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IconComponent/IconComponent.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/DevPage/DevPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DevPage/DevPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfilePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
