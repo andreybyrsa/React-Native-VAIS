@@ -3,6 +3,7 @@ import Cell from '../../components/Cell'
 import IconComponent from '../../components/IconComponent'
 import AppRatingModal from '../../components/Modals/AppRatingModal'
 import ConnectUsModal from '../../components/Modals/ConnectUsModal'
+import SubcriptionModal from '../../components/Modals/SubscriptionModal'
 import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
@@ -22,6 +23,7 @@ import { useDispatch, useSelector } from 'react-redux'
 function ProfilePage() {
   const [ratingOpened, setRatingOpened] = useState<boolean>(false)
   const [connectOpened, setConnectOpened] = useState<boolean>(false)
+  const [subcriptionOpened, setSubcriptionOpened] = useState<boolean>(false)
 
   const Cells: CellContentType[] = [
     {
@@ -63,6 +65,10 @@ function ProfilePage() {
 
   function openConnectModal() {
     setConnectOpened(true)
+  }
+
+  function openSubcriptionModal() {
+    setSubcriptionOpened(true)
   }
 
   function navigateToFavourites() {
@@ -123,7 +129,7 @@ function ProfilePage() {
           onClick={elem.onClick}
         />
       ))}
-      <Button type="primary">Перейти на премиум</Button>
+      <Button type="primary" onClick={openSubcriptionModal}>Перейти на премиум</Button>
       <Cell
         title="Выйти"
         after={
@@ -143,6 +149,11 @@ function ProfilePage() {
       <ConnectUsModal
         opened={connectOpened}
         setOpened={setConnectOpened}
+      />
+
+      <SubcriptionModal
+        opened={subcriptionOpened}
+        setOpened={setSubcriptionOpened}
       />
     </PageLayout>
   )
