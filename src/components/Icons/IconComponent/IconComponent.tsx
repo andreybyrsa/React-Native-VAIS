@@ -1,4 +1,4 @@
-import getCurrentColor from '../../utils/getCurrentColor'
+import getCurrentColor from '../../../utils/getCurrentColor'
 import IconComponentStyles from './IconComponent.styles'
 import IconComponentProps from './IconComponent.types'
 import React from 'react'

@@ -1,4 +1,4 @@
-import Button from '../../components/Button'
+import Button from '../../components/Buttons/Button'
 import NumberField from '../../components/Input/NumberField'
 import UserLoader from '../../components/Loaders/UserLoader'
 import Typography from '../../components/Typography'
@@ -56,7 +56,7 @@ function PhoneConfirmPage() {
     return (
       <Footer>
         <Button
-          onClick={onHandlerSubmit}
+          onPress={onHandlerSubmit}
           disabled={!buttonDisabled}
         >
           Продолжить

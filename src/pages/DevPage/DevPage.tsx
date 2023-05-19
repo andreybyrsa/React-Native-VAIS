@@ -1,11 +1,11 @@
 import { gear, logo } from '../../../assets/images'
 import { jacket } from '../../../assets/images'
-import Button from '../../components/Button'
+import Button from '../../components/Buttons/Button'
 import Card from '../../components/Cards/Card'
 import HorizontalCard from '../../components/Cards/HorizontalCard'
 import Cell from '../../components/Cell'
-import IconButton from '../../components/IconButton'
-import IconComponent from '../../components/IconComponent'
+import IconButton from '../../components/Icons/IconButton'
+import IconComponent from '../../components/Icons/IconComponent'
 import ImageComponent from '../../components/ImageComponent'
 import NumberField from '../../components/Input/NumberField'
 import PhoneField from '../../components/Input/PhoneField'
@@ -44,7 +44,7 @@ function DevPage({ navigation }: PageType) {
           />
         }
       >
-        <Button onClick={() => navigation.navigate('/')}>Продолжить</Button>
+        <Button onPress={() => navigation.navigate('/')}>Продолжить</Button>
       </Footer>
     )
   }, [])

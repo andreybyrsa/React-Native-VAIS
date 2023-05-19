@@ -1,10 +1,10 @@
-import IconComponent from '../../components/IconComponent'
+import IconComponent from '../../components/Icons/IconComponent'
 import Typography from '../../components/Typography'
 import Header from '../../layouts/Header'
 import PageLayout from '../../layouts/PageLayout'
 import { useNavigation } from '@react-navigation/native'
 import { useMemo } from 'react'
-import { TouchableHighlight } from 'react-native'
+import { TouchableHighlight, View } from 'react-native'
 
 function FavouritesLooksPage() {
   const navigation = useNavigation()

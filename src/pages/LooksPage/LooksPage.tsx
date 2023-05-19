@@ -1,4 +1,4 @@
-import FilterButton from '../../components/FilterButton'
+import FilterButton from '../../components/Buttons/FilterButton'
 import FilterModal from '../../components/Modals/FilterModal'
 import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
 import Typography from '../../components/Typography'

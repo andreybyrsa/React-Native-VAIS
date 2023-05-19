@@ -1,16 +1,20 @@
-import { fixedHeight } from '../../../assets/styles/mixins/mixins'
-import getCurrentColor from '../../utils/getCurrentColor'
-import { StyleSheet, ViewStyle } from 'react-native'
-
-const DefaultButton: ViewStyle = {
-  width: '100%',
-  ...fixedHeight({ size: 48 }),
-  borderRadius: 10,
-}
+import { fixedHeight, fixedWidth } from '../../../../assets/styles/mixins/mixins'
+import getCurrentColor from '../../../utils/getCurrentColor'
+import { StyleSheet } from 'react-native'
 
 const ButtonStyes = StyleSheet.create({
   button: {
-    ...DefaultButton,
+    width: '100%',
+    ...fixedHeight({ size: 48 }),
+    borderRadius: 10,
+  },
+  'icon-button': {
+    ...fixedHeight({ size: 48 }),
+    ...fixedWidth({ size: 48 }),
+
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   'pressable-container': {
     width: '100%',
@@ -49,17 +53,17 @@ const ButtonStyes = StyleSheet.create({
     borderWidth: 2,
   },
 
-  'button__text-primary': {
+  'button__content-primary': {
     color: getCurrentColor('color-text-tertiary'),
   },
-  'button__text-secondary': {
+  'button__content-secondary': {
     color: getCurrentColor('color-text-secondary'),
   },
 
-  'button__text-primary--active': {
+  'button__content-primary--active': {
     color: getCurrentColor('color-text-tertiary'),
   },
-  'button__text-secondary--active': {
+  'button__content-secondary--active': {
     color: getCurrentColor('color-text-primary'),
   },
 })

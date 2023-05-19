@@ -15,6 +15,9 @@ const FooterStyles = StyleSheet.create({
     flexDirection: 'row',
     gap: 8,
   },
+  'footer__content': {
+    flex: 1,
+  },
   'footer--is-navigation': {
     paddingHorizontal: 0,
     paddingBottom: 0,

@@ -1,6 +1,6 @@
 import Footer from '../../../layouts/Footer'
 import PageLayout from '../../../layouts/PageLayout'
-import Button from '../../Button'
+import Button from '../../Buttons/Button'
 import DefaultModal from '../DefaultModal'
 import ProfilePictureModalProps from './ProfilePictureModal.types'
 import ProfilePictureModalStyles from './ProfilePrictureModal.styles'
@@ -52,8 +52,8 @@ function ProfilePictureModal({ opened, setOpened, setImage }: ProfilePictureModa
     return (
       <Footer style={ProfilePictureModalStyles['profile-picture-modal__buttons-wrapper']}>
         <View style={ProfilePictureModalStyles['profile-picture-modal__buttons']}>
-          <Button onClick={openCamera}>Сделать фотографию</Button>
-          <Button onClick={openImagesLibrary}>Открыть галерею</Button>
+          <Button onPress={openCamera}>Сделать фотографию</Button>
+          <Button onPress={openImagesLibrary}>Открыть галерею</Button>
         </View>
       </Footer>
     )

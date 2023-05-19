@@ -1,5 +1,5 @@
-import Button from '../../components/Button'
-import IconComponent from '../../components/IconComponent'
+import Button from '../../components/Buttons/Button'
+import IconComponent from '../../components/Icons/IconComponent'
 import ImageComponent from '../../components/ImageComponent'
 import PhoneField from '../../components/Input/PhoneField'
 import TextField from '../../components/Input/TextField'
@@ -55,7 +55,7 @@ function AuthPage() {
       <Footer>
         <Button
           disabled={!buttonDisable}
-          onClick={onHandlerSubmit}
+          onPress={onHandlerSubmit}
         >
           Войти
         </Button>

@@ -1,5 +1,5 @@
 import { lookLoaderBackground__active } from '../../../assets/images'
-import Button from '../../components/Button'
+import Button from '../../components/Buttons/Button'
 import LookLoader from '../../components/Loaders/LookLoader'
 import ProfilePictureModal from '../../components/Modals/ProfilePictureModal'
 import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
@@ -52,7 +52,7 @@ function UploadLookPage() {
       >
         <Button
           type="secondary"
-          onClick={uploadImage}
+          onPress={uploadImage}
         >
           Создать новый образ
         </Button>

@@ -1,4 +1,4 @@
-import { IconNames } from '../../IconComponent/IconNames'
+import { IconNames } from '../../Icons/IconComponent/IconNames'
 import { ViewStyle } from 'react-native'
 
 interface NavigationTabProps {

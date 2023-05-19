@@ -1,4 +1,5 @@
-import Typography from '../Typography'
+import IconComponent from '../../Icons/IconComponent'
+import Typography from '../../Typography'
 import ButtonStyles from './Button.styles'
 import ButtonProps from './Button.types'
 import { useState } from 'react'
@@ -7,12 +8,23 @@ import { TouchableHighlight, View } from 'react-native'
 
 function Button({
   style,
+
   type = 'primary',
-  disabled = false,
+  disabled,
+  isIcon,
+  iconSize,
+
   children = 'Кнопка',
-  onClick = () => null,
+  iconName = 'checkmark',
+
+  onPress = () => null,
 }: ButtonProps) {
   const [isPressed, setIsPressed] = useState<boolean>(false)
+
+  const ContentStyles = [
+    ButtonStyles[`button__content-${type}`],
+    isPressed && ButtonStyles[`button__content-${type}--active`],
+  ]
 
   const onHandlerFocus = () => {
     setIsPressed(true)
@@ -27,6 +39,7 @@ function Button({
         ButtonStyles[`button`],
         ButtonStyles[`button--${type}`],
         disabled && ButtonStyles[`button-${type}--disabled`],
+        isIcon && ButtonStyles['icon-button'],
         isPressed && ButtonStyles[`button-${type}--active`],
         style,
       ]}
@@ -35,22 +48,25 @@ function Button({
         style={[ButtonStyles['pressable-container']]}
         activeOpacity={1}
         underlayColor="transparent"
-        onPress={onClick}
+        onPress={onPress}
         onHideUnderlay={onHandlerBlur}
         onShowUnderlay={onHandlerFocus}
         disabled={disabled}
       >
-        <View>
+        {isIcon && iconName ? (
+          <IconComponent
+            iconStyle={ContentStyles}
+            iconName={iconName}
+            size={iconSize}
+          />
+        ) : (
           <Typography
-            style={[
-              ButtonStyles[`button__text-${type}`],
-              isPressed && ButtonStyles[`button__text-${type}--active`],
-            ]}
+            style={ContentStyles}
             variant="text-2"
           >
             {children}
           </Typography>
-        </View>
+        )}
       </TouchableHighlight>
     </View>
   )

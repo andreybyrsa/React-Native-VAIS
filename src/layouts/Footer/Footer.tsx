@@ -7,7 +7,7 @@ function Footer({ style, children, iconButton, isNavigation }: FooterProps) {
     <View
       style={[FooterStyles.footer, isNavigation && FooterStyles['footer--is-navigation'], style]}
     >
-      <View style={{ flex: 2 }}>{children}</View>
+      <View style={FooterStyles.footer__content}>{children}</View>
       {iconButton}
     </View>
   )

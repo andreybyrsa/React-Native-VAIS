@@ -1,4 +1,4 @@
-import IconComponent from '../../components/IconComponent'
+import IconComponent from '../../components/Icons/IconComponent'
 import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'

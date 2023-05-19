@@ -1,4 +1,4 @@
-import Button from '../../components/Button'
+import Button from '../../components/Buttons/Button'
 import UserLoader from '../../components/Loaders/UserLoader'
 import OnBoadringSwiper from '../../components/OnBoardingSwiper'
 import Typography from '../../components/Typography'
@@ -64,9 +64,9 @@ function OnBoardingPage() {
     return (
       <Footer>
         {slideIndex === 3 ? (
-          <Button onClick={navigateToAuth}>Начать</Button>
+          <Button onPress={navigateToAuth}>Начать</Button>
         ) : (
-          <Button onClick={slideNext}>Продолжить</Button>
+          <Button onPress={slideNext}>Продолжить</Button>
         )}
       </Footer>
     )

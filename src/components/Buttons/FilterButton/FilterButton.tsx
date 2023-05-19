@@ -1,5 +1,5 @@
-import IconComponent from '../IconComponent'
-import Typography from '../Typography'
+import IconComponent from '../../Icons/IconComponent'
+import Typography from '../../Typography'
 import FilterButtonStyles from './FilterButton.styles'
 import FilterButtonProps from './FilterButton.types'
 import { TouchableHighlight, View } from 'react-native'

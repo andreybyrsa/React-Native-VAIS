@@ -1,4 +1,4 @@
-import IconComponent from '../../IconComponent'
+import IconComponent from '../../Icons/IconComponent'
 import Typography from '../../Typography'
 import NavigationTabStyles from './NavigationTab.styles'
 import NavigationTabProps from './NavigationTab.types'
