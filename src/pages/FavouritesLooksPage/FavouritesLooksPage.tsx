@@ -1,10 +1,9 @@
-import IconComponent from '../../components/Icons/IconComponent'
+import TouchableIcon from '../../components/Icons/TouchableIcon'
 import Typography from '../../components/Typography'
 import Header from '../../layouts/Header'
 import PageLayout from '../../layouts/PageLayout'
 import { useNavigation } from '@react-navigation/native'
 import { useMemo } from 'react'
-import { TouchableHighlight, View } from 'react-native'
 
 function FavouritesLooksPage() {
   const navigation = useNavigation()
@@ -17,16 +16,11 @@ function FavouritesLooksPage() {
     return (
       <Header
         leftSideSlot={
-          <TouchableHighlight
-            underlayColor="transparent"
-            activeOpacity={1}
+          <TouchableIcon
+            iconName="ios-return-up-back"
+            iconSize={40}
             onPress={navigateToPrevious}
-          >
-            <IconComponent
-              iconName="ios-return-up-back"
-              size={40}
-            />
-          </TouchableHighlight>
+          />
         }
         rightSideSlot={<Typography variant="title-1">Избранное</Typography>}
       />

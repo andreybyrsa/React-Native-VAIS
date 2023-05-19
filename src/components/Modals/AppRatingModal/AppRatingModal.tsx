@@ -2,13 +2,13 @@ import { ColorsType } from '../../../../assets/styles/colors/colors'
 import PageLayout from '../../../layouts/PageLayout'
 import { setAppRating } from '../../../store/reducers/app/AppReducer'
 import AppSelector from '../../../store/reducers/app/AppSelector'
-import IconComponent from '../../Icons/IconComponent'
+import TouchableIcon from '../../Icons/TouchableIcon'
 import Typography from '../../Typography'
 import DefaultModal from '../DefaultModal'
 import AppRatingModalStyles from './AppRatingModal.styles'
 import AppRatingModalProps from './AppRatingModal.types'
 import { useState } from 'react'
-import { TouchableHighlight, View } from 'react-native'
+import { View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 
 function AppRatingModal({ opened, setOpened }: AppRatingModalProps) {
@@ -44,18 +44,13 @@ function AppRatingModal({ opened, setOpened }: AppRatingModalProps) {
           <Typography variant="title-3">{'Ваше стильное мнение :)'}</Typography>
           <View style={AppRatingModalStyles['app-rating-modal__stars-wrapper']}>
             {[...Array(1, 2, 3, 4, 5)].map((elemIndex) => (
-              <TouchableHighlight
+              <TouchableIcon
                 key={elemIndex}
-                underlayColor="transparent"
-                activeOpacity={1}
+                iconName="star"
+                iconSize={35}
+                iconColor={getCurrentStarColor(elemIndex)}
                 onPress={() => getCurrentRating(elemIndex)}
-              >
-                <IconComponent
-                  iconName="star"
-                  size={35}
-                  color={getCurrentStarColor(elemIndex)}
-                />
-              </TouchableHighlight>
+              />
             ))}
           </View>
         </View>

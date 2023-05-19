@@ -1,4 +1,4 @@
-import IconComponent from '../../components/Icons/IconComponent'
+import TouchableIcon from '../../components/Icons/TouchableIcon'
 import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
@@ -8,7 +8,6 @@ import UserSelector from '../../store/reducers/user/UserSelector'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useNavigation } from '@react-navigation/native'
 import React, { useEffect, useMemo } from 'react'
-import { TouchableHighlight } from 'react-native'
 import { useSelector } from 'react-redux'
 
 function IndexPage() {
@@ -42,16 +41,11 @@ function IndexPage() {
       <Header
         leftSideSlot={<Typography variant="title-1">Главная</Typography>}
         rightSideSlot={
-          <TouchableHighlight
-            underlayColor="transparent"
-            activeOpacity={1}
+          <TouchableIcon
+            iconName="ios-heart-outline"
+            iconSize={45}
             onPress={navigateToFavourites}
-          >
-            <IconComponent
-              iconName="ios-heart-outline"
-              size={45}
-            />
-          </TouchableHighlight>
+          />
         }
       />
     )
