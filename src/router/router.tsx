@@ -1,20 +1,16 @@
-import AuthPage from '../pages/AuthPage'
-import DevPage from '../pages/DevPage'
-import FavouritesLooksPage from '../pages/FavouritesLooksPage'
-import IndexPage from '../pages/IndexPage'
-import LooksPage from '../pages/LooksPage'
-import OnBoardingPage from '../pages/OnBoardingPage'
-import PhoneConfirmPage from '../pages/PhoneConfirmPage'
-import ProfilePage from '../pages/ProfilePage'
-import UploadLookPage from '../pages/UploadLookPage'
-import RouteType from '../types/RouteType'
+import AuthPage from '../pages/AuthPage';
+import DevPage from '../pages/DevPage';
+import FavouritesLooksPage from '../pages/FavouritesLooksPage';
+import IndexPage from '../pages/IndexPage';
+import LooksPage from '../pages/LooksPage';
+import OnBoardingPage from '../pages/OnBoardingPage';
+import PhoneConfirmPage from '../pages/PhoneConfirmPage';
+import ProfilePage from '../pages/ProfilePage';
+import UploadLookPage from '../pages/UploadLookPage';
+import RouteType from '../types/RouteType';
+
 
 const router: RouteType[] = [
-  {
-    id: 8,
-    path: '/dev',
-    component: DevPage,
-  },
   {
     id: 0,
     path: '/on-boarding',
@@ -55,7 +51,11 @@ const router: RouteType[] = [
     path: '/favourites',
     component: FavouritesLooksPage,
   },
-  
+  {
+    id: 8,
+    path: '/dev',
+    component: DevPage,
+  },
 ]
 
 export default router
