@@ -4,7 +4,7 @@ import { ViewStyle } from 'react-native/types'
 
 interface IconComponentProps {
   iconStyle?: ViewStyle | any
-  iconName: IconNames
+  iconName: IconNames | string
   size?: number
   color?: ColorsType
 }

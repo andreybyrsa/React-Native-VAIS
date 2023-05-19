@@ -32,7 +32,7 @@ const CellStyle = StyleSheet.create({
     backgroundColor: getCurrentColor('color-background-primary_active'),
   },
   'cell-disabled': {
-    backgroundColor: getCurrentColor('color-background-light'),
+    backgroundColor: getCurrentColor('color-background-primary'),
   },
 })
 
