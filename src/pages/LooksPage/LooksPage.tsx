@@ -9,6 +9,7 @@ import { useMemo, useState } from 'react'
 
 function LooksPage() {
   const [modalOpened, setModalOpened] = useState<boolean>(false)
+  const [activeFilter, setActiveFilter] = useState<number | null>(null)
 
   const openFilterModal = () => {
     setModalOpened(true)
@@ -18,10 +19,15 @@ function LooksPage() {
     return (
       <Header
         leftSideSlot={<Typography variant="title-1">Образы</Typography>}
-        rightSideSlot={<FilterButton onPress={openFilterModal} />}
+        rightSideSlot={
+          <FilterButton
+            onPress={openFilterModal}
+            isFiltered={activeFilter !== null}
+          />
+        }
       />
     )
-  }, [])
+  }, [activeFilter])
 
   const footer = useMemo(() => {
     return (
@@ -40,6 +46,8 @@ function LooksPage() {
       <FilterModal
         opened={modalOpened}
         setOpened={setModalOpened}
+        activeFilter={activeFilter}
+        setActiveFilter={setActiveFilter}
       />
     </PageLayout>
   )
