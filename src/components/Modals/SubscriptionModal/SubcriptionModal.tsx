@@ -1,5 +1,6 @@
 import { logo } from '../../../../assets/images'
 import PageLayout from '../../../layouts/PageLayout'
+import BenefitsTypes from '../../../types/BenefitsTypes'
 import Button from '../../Buttons/Button'
 import Cell from '../../Cell'
 import IconComponent from '../../Icons/IconComponent'
@@ -10,34 +11,34 @@ import SubcriptionModalStyles from './SubcriptionModal.styles'
 import SubcriptoinModalprops from './SubcriptionModal.types'
 import { View } from 'react-native'
 
-function SubcriptionModal({ opened, setOpened }: SubcriptoinModalprops) {
-  const cellInfo = [
-    {
-      id: 0,
-      iconName: 'star',
-      subtitle: 'Индивидуальные рекомендации',
-      text: 'Какой-то текст, который описывает заголовок',
-    },
-    {
-      id: 1,
-      iconName: 'cog',
-      subtitle: 'Разнообразие вариантов',
-      text: 'Какой-то текст, который описывает заголовок',
-    },
-    {
-      id: 2,
-      iconName: 'ios-heart-outline',
-      subtitle: 'Экономия времени',
-      text: 'Какой-то текст, который описывает заголовок',
-    },
-    {
-      id: 3,
-      iconName: 'ios-person-outline',
-      subtitle: 'Удобство',
-      text: 'Какой-то текст, который описывает заголовок',
-    },
-  ]
+const Benefits: BenefitsTypes[] = [
+  {
+    id: 0,
+    iconName: 'star',
+    subtitle: 'Индивидуальные рекомендации',
+    text: 'Какой-то текст, который описывает заголовок',
+  },
+  {
+    id: 1,
+    iconName: 'cog-outline',
+    subtitle: 'Разнообразие вариантов',
+    text: 'Какой-то текст, который описывает заголовок',
+  },
+  {
+    id: 2,
+    iconName: 'ios-heart-outline',
+    subtitle: 'Экономия времени',
+    text: 'Какой-то текст, который описывает заголовок',
+  },
+  {
+    id: 3,
+    iconName: 'ios-person-outline',
+    subtitle: 'Удобство',
+    text: 'Какой-то текст, который описывает заголовок',
+  },
+]
 
+function SubcriptionModal({ opened, setOpened }: SubcriptoinModalprops) {
   return (
     <DefaultModal
       animationType="fade"
@@ -64,7 +65,7 @@ function SubcriptionModal({ opened, setOpened }: SubcriptoinModalprops) {
               Какая-то мега-крутая мотивационная речь о том, какое это крутое приложение
             </Typography>
           </View>
-          {cellInfo.map((elem) => (
+          {Benefits.map((elem) => (
             <Cell
               disabled
               before={
