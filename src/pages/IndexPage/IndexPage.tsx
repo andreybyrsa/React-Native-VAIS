@@ -1,3 +1,5 @@
+import { jacket } from '../../../assets/images'
+import Card from '../../components/Cards/Card'
 import TouchableIcon from '../../components/Icons/TouchableIcon'
 import NavigationSideBar from '../../components/NavigationComponents/NavigationSideBar'
 import Typography from '../../components/Typography'
@@ -8,7 +10,9 @@ import UserSelector from '../../store/reducers/user/UserSelector'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useNavigation } from '@react-navigation/native'
 import React, { useEffect, useMemo } from 'react'
+import { View } from 'react-native'
 import { useSelector } from 'react-redux'
+import indexPageStyles from './indexPage.styles'
 
 function IndexPage() {
   const user = useSelector(UserSelector())
@@ -59,12 +63,56 @@ function IndexPage() {
     )
   }, [])
 
+  const cards = [
+    {
+      id: 0,
+      name: 'Классический стиль',
+      src: [jacket, jacket, jacket, jacket, jacket, jacket],
+      date: Date.now().toString(),
+    },
+    {
+      id: 1,
+      name: 'Классический стиль',
+      src: [jacket, jacket, jacket, jacket, jacket, jacket],
+      date: Date.now().toString(),
+    },
+    {
+      id: 2,
+      name: 'Классический стиль',
+      src: [jacket, jacket, jacket, jacket, jacket, jacket],
+      date: Date.now().toString(),
+    },
+    {
+      id: 3,
+      name: 'Классический стиль',
+      src: [jacket, jacket, jacket, jacket, jacket, jacket],
+      date: Date.now().toString(),
+    },
+    {
+      id: 4,
+      name: 'Классический стиль',
+      src: [jacket, jacket, jacket, jacket, jacket, jacket],
+      date: Date.now().toString(),
+    },
+  ]
+
   return (
     <PageLayout
       header={header}
       footer={footer}
       footerIsNavigation
-    />
+      style={indexPageStyles['indexPageStyles']}
+    >
+      <View style={indexPageStyles['indexPageStyles-cards']}>
+        {cards.map((elem) => (
+          <Card
+            cardName={elem.name}
+            imageSrces={elem.src}
+            date={elem.date}
+          />
+        ))}
+      </View>
+    </PageLayout>
   )
 }
 

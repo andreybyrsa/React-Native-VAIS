@@ -7,9 +7,6 @@ const CardStyle = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'flex-start',
       flexDirection: 'column',
-
-      width: '100%',
-      height: 315,
    },
    'card__images': {
       display: 'flex',
