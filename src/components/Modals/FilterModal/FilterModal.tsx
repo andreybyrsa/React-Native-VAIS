@@ -1,11 +1,11 @@
 import PageLayout from '../../../layouts/PageLayout'
 import FiltersType from '../../../types/FiltersType'
+import Button from '../../Buttons/Button'
 import CheckBox from '../../Input/CheckBox'
 import Typography from '../../Typography'
 import DefaultModal from '../DefaultModal'
 import FilterModalStyles from './FilterModal.styles'
 import FilterModalProps from './FilterModal.types'
-import { useState } from 'react'
 import { TouchableHighlight, View } from 'react-native'
 
 const Filters: FiltersType[] = [
@@ -27,11 +27,20 @@ const Filters: FiltersType[] = [
   },
 ]
 
-function FilterModal({ opened, setOpened }: FilterModalProps) {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+function FilterModal({
+  opened,
+  setOpened,
 
+  activeFilter,
+  setActiveFilter,
+}: FilterModalProps) {
   const setActiveCheckBox = (index: number) => {
-    setActiveIndex(index)
+    setActiveFilter(index)
+  }
+
+  const resetFilters = () => {
+    setActiveFilter(null)
+    setTimeout(() => setOpened(false), 250)
   }
 
   return (
@@ -51,12 +60,13 @@ function FilterModal({ opened, setOpened }: FilterModalProps) {
                 onPress={() => setActiveCheckBox(elem.id)}
               >
                 <View style={FilterModalStyles['filter-modal__filter']}>
-                  <CheckBox active={activeIndex === elem.id} />
+                  <CheckBox active={activeFilter === elem.id} />
                   <Typography>{elem.text}</Typography>
                 </View>
               </TouchableHighlight>
             )),
           ]}
+          <Button onPress={resetFilters}>Сбросить фильтры</Button>
         </View>
       </PageLayout>
     </DefaultModal>

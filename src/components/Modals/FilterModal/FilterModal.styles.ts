@@ -10,7 +10,7 @@ const FilterModalStyles = StyleSheet.create({
   'filter-modal__filters': {
     width: '100%',
     padding: 16,
-    marginTop: ScreenHeight / 3,
+    marginTop: ScreenHeight / 3.5,
     backgroundColor: getCurrentColor('color-background-primary'),
     borderRadius: 20,
 
