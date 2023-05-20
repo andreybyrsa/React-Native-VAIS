@@ -7,12 +7,12 @@ import Footer from '../../layouts/Footer'
 import Header from '../../layouts/Header'
 import PageLayout from '../../layouts/PageLayout'
 import UserSelector from '../../store/reducers/user/UserSelector'
+import indexPageStyles from './indexPage.styles'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useNavigation } from '@react-navigation/native'
 import React, { useEffect, useMemo } from 'react'
 import { View } from 'react-native'
 import { useSelector } from 'react-redux'
-import indexPageStyles from './indexPage.styles'
 
 function IndexPage() {
   const user = useSelector(UserSelector())
@@ -101,16 +101,17 @@ function IndexPage() {
       header={header}
       footer={footer}
       footerIsNavigation
-      style={indexPageStyles['indexPageStyles']}
     >
-      <View style={indexPageStyles['indexPageStyles-cards']}>
-        {cards.map((elem) => (
-          <Card
-            cardName={elem.name}
-            imageSrces={elem.src}
-            date={elem.date}
-          />
-        ))}
+      <View style={indexPageStyles['indexPageStyles']}>
+        <View style={indexPageStyles['indexPageStyles-cards']}>
+          {cards.map((elem) => (
+            <Card
+              cardName={elem.name}
+              imageSrces={elem.src}
+              date={elem.date}
+            />
+          ))}
+        </View>
       </View>
     </PageLayout>
   )
