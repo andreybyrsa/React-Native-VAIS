@@ -20,10 +20,10 @@ const SubcriptionModalStyles = StyleSheet.create({
     gap: 10,
   },
   'subcription-modal__title': {
-   textAlign: 'center',
+    textAlign: 'center',
   },
   'subcription-modal__button': {
-   marginTop: 10,
+    marginTop: 10,
   },
 })
 
