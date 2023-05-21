@@ -3,9 +3,12 @@ import { ViewStyle } from "react-native";
 interface CardProps {
    style?: ViewStyle
 
-   cardName: string
+   isLookCard?: boolean
+
+   cardName?: string
+   cardPrice?: string
    imageSrces: string[]
-   date: string
+   date?: string
 }
 
 export default CardProps

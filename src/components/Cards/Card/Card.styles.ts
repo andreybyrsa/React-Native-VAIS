@@ -3,34 +3,26 @@ import getCurrentColor from "../../../utils/getCurrentColor"
 
 const CardStyle = StyleSheet.create({
    'card': {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      flexDirection: 'column',
-
-      width: '100%',
-      height: 315,
-   },
-   'card__images': {
-      display: 'flex',
-      justifyContent: 'center',
-
-      width: '100%',
-      maxHeight: 250,
+      width: 165,
+      height: 250,
+      backgroundColor: getCurrentColor('color-image-primary'),
 
       borderRadius: 20,
       borderBottomStartRadius: 0,
       borderBottomEndRadius: 0,
 
-      backgroundColor: getCurrentColor('color-image-primary'),
-
+      justifyContent: 'center',
+   },
+   'card__images': {
+      flexDirection: 'row',
+      justifyContent: 'center',
       flexWrap: 'wrap',
    },
    'card__info': {
       display: 'flex',
       justifyContent: 'center',
 
-      width: '100%',
+      width: 165,
       minHeight: 60,
 
       borderBottomLeftRadius: 0,
@@ -41,6 +33,10 @@ const CardStyle = StyleSheet.create({
       backgroundColor: getCurrentColor('color-background-dark_light'),
       paddingVertical: 10,
       paddingHorizontal: 10,
+   },
+   'card__isLookCard':{
+      flexDirection: 'row',
+      justifyContent: 'space-between',
    },
 })
 

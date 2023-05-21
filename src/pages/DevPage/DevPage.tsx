@@ -1,11 +1,15 @@
+import { jacket } from '../../../assets/images'
 import Button from '../../components/Buttons/Button'
+import Card from '../../components/Cards/Card'
 import SubcriptionModal from '../../components/Modals/SubscriptionModal'
 import Typography from '../../components/Typography'
 import Footer from '../../layouts/Footer'
 import Header from '../../layouts/Header'
 import PageLayout from '../../layouts/PageLayout'
 import PageType from '../../types/PageType'
+import DevPageStyles from './DevPage.styles'
 import React, { useMemo, useState } from 'react'
+import { View } from 'react-native'
 
 function DevPage({ navigation }: PageType) {
   const [error, setError] = useState<string>('')
@@ -35,16 +39,56 @@ function DevPage({ navigation }: PageType) {
     setSubcriptionOpen(true)
   }
 
+  const cards = [
+    {
+      id: 0,
+      src: [jacket, jacket, jacket, jacket],
+      cardName: 'Классический костюм',
+      cardPrice: '100 рублей',
+      date: Date.now().toString(),
+    },
+    {
+      id: 1,
+      src: [jacket, jacket, jacket, jacket, jacket, jacket],
+      cardName: 'Классический костюм',
+      cardPrice: '100 рублей',
+      date: Date.now().toString(),
+    },
+    {
+      id: 2,
+      src: [jacket, jacket, jacket],
+      cardName: 'Классический костюм',
+      cardPrice: '100 рублей',
+      date: Date.now().toString(),
+    },
+    {
+      id: 3,
+      src: [jacket, jacket],
+      cardName: 'Классический костюм',
+      cardPrice: '100 рублей',
+      date: Date.now().toString(),
+    },
+  ]
+
   return (
     <PageLayout
       header={header}
       footer={footer}
     >
-      <Button onPress={openModal}>Открыть модалку</Button>
-      <SubcriptionModal
-        opened={subcriptionOpen}
-        setOpened={setSubcriptionOpen}
-      />
+      <View style={DevPageStyles['dev-page__content']}>
+        <View style={DevPageStyles['dev-page__cards']}>
+          {cards.map((elem) => (
+            <Card
+              isLookCard
+              key={elem.id}
+              imageSrces={elem.src}
+              date={elem.date}
+              cardName={elem.cardName}
+              cardPrice={elem.cardPrice}
+            />
+          ))}
+        </View>
+      </View>
     </PageLayout>
   )
 }
