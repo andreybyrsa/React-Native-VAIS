@@ -1,19 +1,19 @@
-import { StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native'
 
-const indexPageStyles = StyleSheet.create({
-   'indexPageStyles': {
-      alignItems: 'center',
-   },
-   'indexPageStyles-cards':{
-      display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
+const width = Dimensions.get('window').width
 
-      width: '100%',
-      maxWidth: 340,
-      
-      gap: 20,
-   },
+const IndexPageStyles = StyleSheet.create({
+  'index-page__content': {
+    alignSelf: 'center',
+  },
+  'index-page__cards': {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    width: '100%',
+
+    gap: width < 385 ? 8 : 16,
+  },
 })
 
-export default indexPageStyles
+export default IndexPageStyles
