@@ -15,7 +15,7 @@ const TypographyVariants = {
     lineHeight: 26,
   },
   'title-4': {
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat-Semibold',
     fontSize: 14,
     lineHeight: 20,
   },

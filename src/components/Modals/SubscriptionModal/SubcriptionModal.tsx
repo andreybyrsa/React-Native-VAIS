@@ -14,27 +14,27 @@ function SubcriptionModal({ opened, setOpened }: SubcriptoinModalprops) {
   const cellInfo = [
     {
       id: 0,
-      iconName: 'star',
+      iconName: 'md-bulb-outline',
       subtitle: 'Индивидуальные рекомендации',
-      text: 'Какой-то текст, который описывает заголовок',
+      text: 'Получайте рекомендации первыми, узнавайте быстрее',
     },
     {
       id: 1,
-      iconName: 'cog',
+      iconName: 'ios-menu',
       subtitle: 'Разнообразие вариантов',
-      text: 'Какой-то текст, который описывает заголовок',
+      text: 'Найдите новые стили, необычные образы',
     },
     {
       id: 2,
-      iconName: 'ios-heart-outline',
+      iconName: 'ios-time-outline',
       subtitle: 'Экономия времени',
-      text: 'Какой-то текст, который описывает заголовок',
+      text: 'Сэкономьте свое время поиска нового стиля',
     },
     {
       id: 3,
-      iconName: 'ios-person-outline',
+      iconName: 'md-rocket-outline',
       subtitle: 'Удобство',
-      text: 'Какой-то текст, который описывает заголовок',
+      text: 'Получите новые возможности для удобства работы с нами',
     },
   ]
 
@@ -61,7 +61,7 @@ function SubcriptionModal({ opened, setOpened }: SubcriptoinModalprops) {
               variant="text-6"
               style={SubcriptionModalStyles['subcription-modal__title']}
             >
-              Какая-то мега-крутая мотивационная речь о том, какое это крутое приложение
+              Первое приложение, которое поможет оставаться на стиле и быть в тренде
             </Typography>
           </View>
           {cellInfo.map((elem) => (

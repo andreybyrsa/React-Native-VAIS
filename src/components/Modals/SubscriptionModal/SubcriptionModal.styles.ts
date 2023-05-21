@@ -21,6 +21,7 @@ const SubcriptionModalStyles = StyleSheet.create({
   },
   'subcription-modal__title': {
    textAlign: 'center',
+   width: 280,
   },
   'subcription-modal__button': {
    marginTop: 10,

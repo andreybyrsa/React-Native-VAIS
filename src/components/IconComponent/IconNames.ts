@@ -19,3 +19,8 @@ export type IconNames =
   | 'star'
   | 'ios-return-up-back'
   | 'cog'
+  | 'funnel'
+  | 'ios-menu'
+  | 'ios-time-outline'
+  | 'md-bulb-outline'
+  | 'md-rocket-outline'
